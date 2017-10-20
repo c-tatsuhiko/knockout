@@ -1,43 +1,750 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/sample.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <base href="/m/">
+  <title>ena</title>
+  <link rel="stylesheet" href="/m/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+  <link rel="stylesheet" href="/m/css/style2.css">
+  <link rel="stylesheet" href="/m/css/font-style.css">
+  <!-- GA // -->
+  <script type="text/javascript" src="https://www.google-analytics.com/analytics.js" charset="UTF-8"></script>
+  <!-- // GA -->
+  <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+  <script type="text/javascript" src="/m/js/knockout-3.4.2.js"></script>
+  <script type="text/javascript">
+    window.criteo_q = window.criteo_q || [];
+    window.criteo_q.push({
+      event: "setAccount",
+      account: 25180
+    }, {
+      event: "setSiteType",
+      type: "m"
+    }, {
+      event: "viewHome"
+    });
+  </script>
+  <link rel="apple-touch-icon" href="/sp/apple-touch-icon.png">
+  <link rel="canonical" href="https://www.ena.travel/">
 </head>
 
+<body class="page-search is-hide-pagetop" id="body">
+  <div class="l-wrapper" id="wrapper">
+    <div class="alert-box" id="js-alert-box"></div>
+    <header class="l-header header">
+      <h1 class="header-logo">
+        <a href="/m/">
+          <img src="/m/images/logo.png" width="60" height="" alt="ena イーナ">
+        </a>
+      </h1>
+      <nav class="header-nav">
+        <a href="/mypage/" class="header-nav__item header-nav-item login">
+          <span class="ena-login fa-2x"></span>
+          <span class="header-nav-item__caption">Login</span>
+        </a>
+        <a href="#" class="header-nav__item header-nav-item menu" id="js-show-header-menu">
+          <span class="ena-menu icon-font-size"></span>
+          <span class="header-nav-item__caption">Menu</span>
+        </a>
+      </nav>
+    </header>
 
-<body>
+    <main class="l-main" id="main">
+      <section class="l-section">
+        <div class="search-error" style="display: none;">
+          <p></p>
+        </div>
 
-  <div style="background:#eee;">
-    <h2 class="page-title">海外航空券検索</h2>
+        <header class="section-header">
+          <h2 class="page-title">海外航空券検索</h2>
+        </header>
+        <div class="search-tabs">
+          <a href="air/" class="search-tabs__item tab-item is-current">往復</a>
+          <a href="air.hktml" class="search-tabs__item tab-item">片道</a>
+          <a href="air/multi-city/" class="search-tabs__item tab-item">周遊</a>
+          <a href="air/abroad/" class="search-tabs__item tab-item">海外発着</a>
+        </div>
+        <!--テスト-->
+        <div class="search-panel">
+          <a href="#" class="search-item-test">
+            <div class="ena-takeoff" style="font-size:200%;"></div>
+            <div>テスト</div>
+          </a>
+        </div>
+        <!--テスト-->
 
-    <div class="search-tabs">
-      <a href="#">往復</a>
-      <a href="#" class="search-tabs_item">片道</a>
-      <a href="#">周遊</a>
-      <a href="#">海外発着</a>
-    </div>
-
-    <div class="search-panel">
-      <a href="#">出発地</a>
-      <a href="#">目的地</a>
-      <a href="#">日程</a>
-      <a href="#">直行のみ</a>
-      <a href="#">人数</a>
-      <a href="#">詳細オプション</a>
-      <a href="#">検索する</a>
-      <a href="#">得セット割で検索する</a>
-
-    </div>
+        <div class="search-panel">
+          <div class="search-panel__form search-form">
+            <div class="search-form__row">
+              <div class="search-airport is-departure">
+                <a href="#" class="search-item js-open-input-airport">
+                  <span class="search-item__title">
+                    <span class="ena-takeoff"></span>
+                    <span class="label">出発地</span>
+                  </span>
+                </a>
+                <div class="modal-input-airport js-modal-input-airport">
+                  <div class="input-airport-bg js-close-input-airport"></div>
+                  <div class="input-area">
+                    <input type="text" class="input-airport">
+                    <div class="suggest-airport">
+                      <div class="suggest-airport__tabs js-tabs">
+                        <a href="#" class="tab js-tab">検索</a>
+                        <a href="#" class="tab js-tab is-active">候補</a>
+                      </div>
+                      <div class="suggest-airport__body is-search suggest-tab-contents js-tab-contents">
+                        <p class="alert-message tab-contents-item is-alert">
+                          空港名・都市などを入力してください
+                        </p>
+                        <div class="suggested-search tab-contents-item"></div>
+                        <div class="input-airport-history tab-contents-item">
+                          <p class="input-airport-history__title">検索履歴</p>
+                          <div class="suggested-search history"></div>
+                        </div>
+                      </div>
+                      <div class="suggest-airport__body suggest-tab-contents js-tab-contents is-active">
+                        <p class="alert-message tab-contents-item is-alert">
+                          下記より出発地をお選びいただくか、都市名を直接入力ください。
+                        </p>
+                        <div class="suggested-city tab-contents-item">
+                          <div class="suggested-city__area">
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="TYO">東京</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HND">羽田</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="NRT">成田</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="OSA">大阪</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="ITM">伊丹</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="KIX">関空</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="NGO">名古屋</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="FUK">福岡</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SPK">札幌</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SDJ">仙台</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="OKJ">岡山</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HIJ">広島</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="OKA">那覇</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-airport is-arrival">
+                <a href="#" class="search-item js-open-input-airport">
+                  <span class="search-item__title">
+                    <span class="ena-landing"></span>
+                    <span class="label">目的地</span>
+                  </span>
+                </a>
+                <div class="modal-input-airport js-modal-input-airport">
+                  <div class="input-airport-bg js-close-input-airport"></div>
+                  <div class="input-area">
+                    <input type="text" class="input-airport">
+                    <div class="suggest-airport">
+                      <div class="suggest-airport__tabs js-tabs">
+                        <a href="#" class="tab js-tab">検索</a>
+                        <a href="#" class="tab js-tab is-active">人気都市</a>
+                      </div>
+                      <div class="suggest-airport__body is-search suggest-tab-contents js-tab-contents">
+                        <p class="alert-message tab-contents-item is-alert">
+                          空港名・都市などを入力してください
+                        </p>
+                        <div class="suggested-search tab-contents-item">
+                        </div>
+                        <div class="input-airport-history tab-contents-item">
+                          <p class="input-airport-history__title">検索履歴</p>
+                          <div class="suggested-search history"></div>
+                        </div>
+                      </div>
+                      <div class="suggest-airport__body suggest-tab-contents js-tab-contents is-active">
+                        <p class="alert-message tab-contents-item is-alert">
+                          下記より目的地をお選びいただくか、都市名を直接入力ください。
+                        </p>
+                        <div class="suggested-city tab-contents-item">
+                          <div class="suggested-city__area">
+                            <h3 class="suggested-city__area-name">【東アジア】</h3>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SEL">ソウル</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="PUS">プサン</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="TPE">台北</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HKG">香港</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SHA">上海</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="BJS">北京</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="CAN">広州</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="MFM">マカオ</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <h3 class="suggested-city__area-name">【東南アジア】</h3>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="BKK">バンコク</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="KUL">クアラルンプール</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SIN">シンガポール</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="MNL">マニラ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SGN">ホーチミン</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HAN">ハノイ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="JKT">ジャカルタ</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <h3 class="suggested-city__area-name">【アメリカ】</h3>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="LAX">ロサンゼルス</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SFO">サンフランシスコ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="LAS">ラスベガス</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="CHI">シカゴ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="NYC">ニューヨーク</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="YVR">バンクーバー</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="YTO">トロント</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="MEX">メキシコシティ</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <h3 class="suggested-city__area-name">【ヨーロッパ】</h3>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="PAR">パリ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="LON">ロンドン</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="FRA">フランクフルト</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="ROM">ローマ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="MIL">ミラノ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="MAD">マドリード</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="BCN">バルセロナ</a>
+                          </div>
+                          <div class="suggested-city__area">
+                            <h3 class="suggested-city__area-name">【ビーチ他】</h3>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="CEB">セブ島</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="DPS">デンパサール（バリ島）</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="USM">サムイ</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HKT">プーケット</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="HNL">ホノルル</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="GUM">グアム</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SPN">サイパン</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="SYD">シドニー</a>
+                            <a href="#" class="suggested-city__item js-select-airport" data-id="AKL">オークランド</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-form__row">
+              <a href="#" class="search-item flight-calendar">
+                <span class="search-item__title">
+                  <span class="ena-calendar"></span>
+                  <span class="label calendar_nittei">日程</span>
+                </span>
+              </a>
+              <input type="checkbox" class="checkbox flight-nonstop" id="nonstop">
+              <label for="nonstop" class="search-item toggle-check">直行のみ</label>
+            </div>
+            <div class="search-form__row">
+              <a href="#" class="search-item people js-show-modal" data-target="js-modal-people">
+                <span class="people-type">
+                  <span class="people-type__title">
+                    <span class="ena-adult"></span>
+                    <span class="label">大人</span>
+                  </span>
+                  <span class="num">×
+                    <span class="js-input-adult">1</span>
+                  </span>
+                </span>
+                <span class="people-type">
+                  <span class="people-type__title">
+                    <span class="ena-child"></span>
+                    <span class="label">子供</span>
+                  </span>
+                  <span class="num">×
+                    <span class="js-input-child">0</span>
+                  </span>
+                </span>
+                <span class="people-type">
+                  <span class="people-type__title">
+                    <span class="ena-baby"></span>
+                    <span class="label">幼児</span>
+                  </span>
+                  <span class="num">×
+                    <span class="js-input-baby">0</span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div class="search-option js-accordion-wrapper">
+              <a href="#" class="search-option__toggle js-toggle-accordion">詳細オプション
+                <span class="icon-plus"></span>
+              </a>
+              <div class="search-option__contents js-accordion-contents">
+                <div class="search-form__row">
+                  <a href="#" class="search-item is-option airline js-show-modal" data-target="js-modal-airline">
+                    <span class="search-item__title is-left">
+                      <span class="ena-aircraft icon-font-size"></span>
+                      <span class="label">航空会社</span>
+                    </span>
+                    <span class="search-item__data" id="js-airline-value">
+                      指定なし
+                    </span>
+                  </a>
+                </div>
+                <div class="search-form__row">
+                  <a href="#" class="search-item is-option seat js-show-modal" data-target="js-modal-seat">
+                    <span class="search-item__title is-left">
+                      <span class="ena-seat icon-font-size"></span>
+                      <span class="label">座席クラス</span>
+                    </span>
+                    <span class="search-item__data" id="js-seat-value">
+                      指定なし
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="button-area">
+              <a href="#" class="button">検索する</a>
+              <a href="#" class="button is-strong is-set">
+                <span>セット割で検索する</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="l-modal modal js-modal" id="js-modal-people">
+        <div class="modal__window">
+          <div class="modal__header modal-header">
+            <p class="modal-header__title">
+              人数
+            </p>
+            <a href="#" class="close-modal js-close-modal">
+              <span class="ena-close"></span>
+            </a>
+          </div>
+          <div class="modal__contents js-modal-contents">
+            <div id="js-people-selector-wrapper">
+              <div class="people-selector js-people-selector">
+                <div class="people-selector__item people-item">
+                  <p class="people-item__title">
+                    <span class="icon-wrap">
+                      <span class="ena-adult"></span>
+                    </span>
+                    <span class="label">大人</span>
+                  </p>
+                  <div class="step-input js-step-input">
+                    <a href="#" class="step-input__button is-minus js-step-minus">-</a>
+                    <input type="text" value="1" class="step-input__input js-step-val js-people-num js-people-num-adult js-select-adult" data-target-people=".js-input-adult"
+                      data-input-min="1" data-input-max="9">
+                    <a href="#" class="step-input__button is-plus js-step-plus">+</a>
+                  </div>
+                </div>
+                <div class="people-selector__item people-item">
+                  <p class="people-item__title">
+                    <span class="icon-wrap">
+                      <span class="ena-child"></span>
+                    </span>
+                    <span class="label">子供
+                      <span class="caption">（0〜11歳）</span>
+                    </span>
+                  </p>
+                  <div class="step-input js-step-input">
+                    <a href="#" class="step-input__button is-minus js-step-minus is-disable">-</a>
+                    <input type="text" value="0" class="step-input__input js-step-val js-people-num js-view-age" data-input-min="0" data-input-max="9">
+                    <a href="#" class="step-input__button is-plus js-step-plus">+</a>
+                  </div>
+                </div>
+                <div class="people-selector__item is-hidden">
+                  <input type="hidden" value="0" class="js-people-num js-people-hidden-num-child" data-target-people=".js-input-child">
+                  <input type="hidden" value="0" class="js-people-num js-people-hidden-num-baby" data-target-people=".js-input-baby">
+                </div>
+                <div class="people-selector__error caution-message js-error-count-baby is-hidden js-error">
+                  <p class="caution-message__title">
+                    幼児の人数は大人の人数以下で指定してください
+                  </p>
+                </div>
+                <div class="select-children-age js-select-age">
+                  <p class="select-children-age__desc">旅行時のお子様の年齢を入力してください。
+                    <br>2歳未満のお子様は幼児となります
+                    <!--、座席利用の有無を選択ください-->。
+                    <br>幼児は大人人数以内でお選びいただけます。
+                    <br>年齢によっては割引の対象となることがあります。</p>
+                  <div class="select-children-age__list">
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供1
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age01" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat01">
+                          <label for="switch-seat01" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供2
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age02" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat02">
+                          <label for="switch-seat02" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供3
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age03" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat03">
+                          <label for="switch-seat03" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供4
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age04" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat04">
+                          <label for="switch-seat04" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供5
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age05" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat05">
+                          <label for="switch-seat05" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供6
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age06" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat06">
+                          <label for="switch-seat06" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供7
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age07" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat07">
+                          <label for="switch-seat07" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供8
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age08" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat08">
+                          <label for="switch-seat08" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children-age-item js-age-item">
+                      <p class="children-age-item__title">
+                        子供9
+                      </p>
+                      <div class="children-age-item__body">
+                        <div class="select-age">
+                          <label class="input-select">
+                            <select name="children-age09" class="input-select__body js-select-child-age">
+                              <option value="-" selected>-</option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                            </select>
+                          </label>
+                          <span class="children-age-item__unit">歳</span>
+                        </div>
+                        <div class="switch-seat" style="visibility:hidden;">
+                          <input type="checkbox" class="checkbox js-switch-seat" id="switch-seat09">
+                          <label for="switch-seat09" class="search-item toggle-check js-switch-seat-label" data-tipso="ご選択の年齢の場合は変更できません">座席利用する</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="button close-people js-close-people js-close-modal">決定</a>
+          </div>
+        </div>
+      </section>
+      <section class="l-modal modal js-modal" id="js-modal-airline">
+        <div class="modal__window">
+          <div class="modal__header modal-header">
+            <p class="modal-header__title">
+              航空会社・アライアンス
+            </p>
+            <a href="#" class="close-modal js-close-modal">
+              <span class="ena-close"></span>
+            </a>
+          </div>
+          <div class="modal__contents">
+            <div class="open-selector js-open-selector" data-target="js-airline-value">
+              <a href="#" class="open-selector__item js-select-item is-active">指定なし</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="l-modal modal js-modal" id="js-modal-seat">
+        <div class="modal__window">
+          <div class="modal__header modal-header">
+            <p class="modal-header__title">
+              座席クラス
+            </p>
+            <a href="#" class="close-modal js-close-modal">
+              <span class="ena-close"></span>
+            </a>
+          </div>
+          <div class="modal__contents">
+            <div class="open-selector js-open-selector" data-target="js-seat-value">
+              <a href="#" class="open-selector__item js-select-item is-active">指定なし</a>
+              <a href="#" class="open-selector__item js-select-item" data-id="EC">エコノミー</a>
+              <a href="#" class="open-selector__item js-select-item" data-id="PE">プレミアムエコノミー</a>
+              <a href="#" class="open-selector__item js-select-item" data-id="BU">ビジネス</a>
+              <a href="#" class="open-selector__item js-select-item" data-id="FI">ファースト</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="calendar_wrapper_underlayer"></div>
+      <div id="calendar_body">
+        <table id="youbi">
+          <tr>
+            <td class="youbi_bgcol">日</td>
+            <td class="youbi_bgcol">月</td>
+            <td class="youbi_bgcol">火</td>
+            <td class="youbi_bgcol">水</td>
+            <td class="youbi_bgcol">木</td>
+            <td class="youbi_bgcol">金</td>
+            <td class="youbi_bgcol">土</td>
+          </tr>
+        </table>
+        <div id="calendar_year"></div>
+        <div id="calendar"></div>
+        <div class="calendar_modal__header">
+          <div class="calendar_modal-header__title" id="calendar_validation">
+            日本出発日を選択してください
+          </div>
+        </div>
+        <div id="btn_close">
+          <span class="ena-close"></span>
+        </div>
+        <div id="calendar_wrapper_overlayer"></div>
+      </div>
+    </main>
+    <footer class="l-footer footer" id="footer">
+      <a href="/" class="footer__link-pc">PCサイトを見る</a>
+      <p class="footer__copyright">&copy;AIRPLUS co.,ltd.</p>
+    </footer>
+    <a href="#" class="pagetop js-smooth-scroll js-show-scroll">
+      <svg role="image" class="icon-arrow">
+        <use xlink:href="/m/images/icons.svg#arrow-top" />
+      </svg>
+    </a>
   </div>
-
-  <!-- <div class="container bg-info">container</div>
-    <a href="/#" class="btn btn-primary btn-lg disabled" role="button">テスト</a>
-    <button type="button" class="btn btn-primary btn-lg">large button</button>
-    -->
+  <script type="text/javascript">
+    var spBackFlg = false;
+  </script>
+  <script src="//www.ena.travel/template/toppage/js/all_master.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="/m/js/wNumb.js"></script>
+  <script src="/m/js/nouislider.min.js"></script>
+  <script src="/m/js/tipso.min.js"></script>
+  <script src="/m/js/slick.min.js"></script>
+  <script src="/m/js/jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="/m/js/jquery.easing.1.3.js"></script>
+  <script src="/m/js/jquery.ui.touch-punch.js"></script>
+  <script src="/m/js/sample.js"></script>
+  <script src="/m/js/main.js"></script>
 </body>
-
 
 </html>

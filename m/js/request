@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8" />
+  <meta http-equiv="Cache-Control" content="private, max-age=300" />
+  <meta name="keywords" content="海外格安航空券,格安航空券,オンライン予約,ena,イーナ" />
+  <meta name="description" content="海外格安航空券をオンラインで予約・購入するならena。イーナは自動販売機のような海外格安航空券検索サイトです。" />
+  <title>海外格安航空券検索・予約│海外格安航空券自動販売機ena(イーナ)</title>
+  <link rel="shortcut icon" href="/images/ena/img/ena_favicon.ico" />
+  <link rel="stylesheet" href="/air/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="/air/css/air_common.css" type="text/css" />
+  <link rel="stylesheet" href="/air/css/air_list_def.css" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/air/js/custom.json" charset="UTF-8"></script>
+  <script type="text/javascript" charset="UTF-8">
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1766110-1']);
+  _gaq.push(['_setDomainName', 'ena.travel']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  window.onerror = function(message, fileName, lineNumber) {_gaq.push(['_trackEvent', 'Error', 'JSError', 'message:' + message + ', fileName:' + fileName + ', line:' + lineNumber + ', href:' + location.href + ', userAgent:' + window.navigator.userAgent + ', mode:PC']);};
+  </script>
+</head>
+
+<body>
+  <span id="globalHeader">
+<div id="Tagline"><!-- Tagline -->
+<div class="inner-box default">
+	<ul>
+		<li class="beginner"><a href="/ena/support/description.html" target="_blank" title="初めての方へ">初めての方へ</a></li>
+		<li><a href="/ena/support/faq.html" target="_blank">よくある質問</a></li>
+		<li><a href="/ena/support/flow.html" target="_blank">ご予約後の流れ</a></li>
+		<li><a href="/ena/support/travel_docs.html" target="_blank">取消・条件書</a></li>
+		<li><a href="/ena/support/sitemap.html" target="_blank">サイトマップ</a></li>
+		<li class="btn_mypage"><a href="https://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/mypage/" id="link.mypage"><img alt="マイページ" src="/template/common/img/header/btn_mypage.gif" /></a></li>
+		<li class="cn"><a href="/cn/"><img alt="中国語" src="/template/common/img/header/btn_language_cn2.gif" /></a></li>
+		<li class="kr"><a href="/kr/"><img alt="韓国語" src="/template/common/img/header/btn_language_kr2.gif" /></a></li>
+	</ul>
+</div>
+</div><!-- /Tagline -->
+<div id="Header"><!-- Header -->
+<div class="inner-box default">
+	<a name="pagetop" id="pagetop"></a>
+	<div id="SiteNav"><!-- SiteNav -->
+		<p id="SiteLogo"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/" id="link.home"><img alt="ena" src="/template/common/img/header/logo_ena_3.gif" />24時間パッとカンタン、スグ買える　ena(イーナ)の海外格安航空券予約</a></p>
+		<p class="catchcopy"><a href="/ena/support/trust.html" target="_blank"><img alt="オンライン海外旅行サイト" class="label" src="/template/common/img/header/badge_label_02.gif" /></a>
+		<a href="/ena/support/sl.html" target="_blank"><img alt="イーナ・カスタマーサービス" class="vis" src="/template/common/img/header/pic_image-tichket_3.gif" /></a></p>
+		<div class="ichioshi" style="display:none;"><p class="add"></p><div class="ticker" id="longitudinally"></div></div>
+	</div><!-- /SiteNav -->
+</div>
+</div><!-- /Header -->
+
+<div id="Navs"><!-- Navs -->
+<div id="GlobalNav" class="inner-box default"><!-- GlobalNav -->
+	<ul class="tops">
+		<li class="first home"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/" id="link.home"><img alt="ホーム" src="/template/common/img/header/tab_global-nav_tops_home_off.gif" /></a></li>
+		<li class="airline"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/air/" id="link.air"><img alt="海外格安航空券" src="/template/common/img/header/tab_global-nav_tops_airline_active.gif" /></a></li>
+		<li class="tour"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/tour/" id="link.tour"><img alt="格安海外ツアー（航空券＋ホテル）" src="/template/common/img/header/tab_global-nav_tops_tour_off.gif" /></a></li>
+		<li class="hotel"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/hotel/" id="link.hotel"><img alt="海外ホテル" src="/template/common/img/header/tab_global-nav_tops_hotel_off.gif" /></a></li>
+		<li class="kokunai"><a href="http://kokunai.ena.travel/"><img alt="国内旅行" src="/template/common/img/header/tab_global-nav_tops_kokunai_off.gif" /></a></li>
+		<li class="optional"><a href="/optional/"><img alt="オプショナルツアー(現地ツアー)" src="/template/common/img/header/tab_global-nav_tops_optional_off.gif" /></a></li>
+		<li class="car"><a href="/rentacar/"><img alt="海外レンタカー" src="/template/common/img/header/tab_global-nav_tops_car_off.gif" /></a></li>
+		<li class="insurance"><a href="/insurance/"><img alt="海外旅行保険" src="/template/common/img/header/tab_global-nav_tops_insurance_off.gif" /></a></li>
+		<li class="magazine"><a href="/ena/info/mailmagazine/"><img alt="無料メルマガ" src="/template/common/img/header/tab_global-nav_tops_mag_off.gif" /></a></li>
+		<li class="chart"><a href="/chart/"><img alt="航空券相場チャート" src="/template/common/img/header/tab_global-nav_tops_chart_off.gif" /></a></li>
+	</ul>
+</div><!-- /GlobalNav -->
+</div><!-- /Navs -->
+  </span>
+  <span id="normalHeader"></span>
+  <hr class="slash" />
+  
+  <div id="Contents"><!-- Contents -->
+    <div class="inner-box">
+      <div id="PageNav"><!-- PageNav -->
+        <ol class="breadcrumbs-list default"><!-- BreadcrumbsList -->
+          <li class="home"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com" id="top.url">海外格安航空券の予約と購入 HOME</a></li>
+          <li><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com" id="top.url">海外格安航空券 TOP</a></li>
+          <li><strong>エラー</strong></li>
+        </ol><!-- /BreadcrumbsList -->
+        <img class="img-pagenav" src="/template/toppage/img/bn_settlement_s.jpg" alt="現金系決済可能！" height="60" width="102" />
+      </div><!-- /PageNav -->
+      <div id="mainContents"><!-- mainContents -->
+        
+        <div class="noitemBlock">
+          <p class="errorMessage">
+            大変申し訳ございません。ページの有効期限が切れました。<br />
+            左の検索窓より条件を変えて再検索いただくか、<br />下記問い合わせフォームへご希望の条件（出発日・帰着日、出発地・目的地、人数など）を記入の上、メールで送信願います。
+          </p>
+        </div>
+        <div class="noitemBlock">
+          <div class="sectionB">
+            <h1 class="title4">オペレーターにメールして探す</h1>
+            <p>＊日程が複雑であったり、ホテルなど現地のお手配も加わる場合など、プロの意見を求めたいときに有効です。<br />＊翌営業日までに、必ず回答いたします。<br /><span class="redTxt"><strong>【必須】の項目は必ずご記入をお願いします。</strong></span></p>
+            <form action="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/air/check/" id="noitemForm" method="post" onsubmit="return false;">
+            <table summary="問い合わせフォーム">
+            <tbody>
+              <tr>
+                <th class="essential">お名前<span><font color="red">【必須】</font></span></th>
+                <td><input id="mail_param1" size="55" type="text" /></td>
+              </tr>
+              <tr>
+                <th class="essential">メールアドレス<span><font color="red">【必須】</font></span></th>
+                <td><input id="mail_param2" size="55" type="text" /></td>
+              </tr>
+              <tr>
+                <th class="essential">メールアドレス確認<span><font color="red">【必須】</font></span></th>
+                <td><input id="mail_param3" size="55" type="text" /></td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><input id="mail_param4" size="55" type="text" /><br />※お電話でのご説明をご希望の方はご記入ください。</td>
+              </tr>
+              <tr>
+                <th>人数</th>
+                <td>大人&nbsp;
+                  <input value="1" id="mail_param5" size="2" maxlength="2" style="ime-mode: disabled;" type="text" />&nbsp;人　子供&nbsp;
+                  <input value="0" id="mail_param6" size="2" maxlength="2" style="ime-mode: disabled;" type="text" />&nbsp;人　幼児&nbsp;
+                  <input value="0" id="mail_param7" size="2" maxlength="2" style="ime-mode: disabled;" type="text" />&nbsp;人
+                </td>
+              </tr>
+              <tr>
+                <th>問い合わせ内容</th>
+                <td><textarea id="mail_param8" cols="60" rows="10"></textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="tac"><a href="javascript:void(0);" onclick="sendmessage(this); return false;" title="送信する"><img src="/air/images/air_common/m-noitem-cnt_btn01.gif" alt="送信する" height="29" width="115" /></a></td>
+              </tr>
+            </tbody>
+            </table>
+            <input type="hidden" id="mail_param9" value="-1" />
+            </form>
+          </div><!-- //sectionB -->
+        </div><!-- //noitemBlock -->
+        
+        
+      </div><!-- /mainContents -->
+      <hr class="slash" />
+      <div id="subContents"><!-- subContents -->
+        <div class="s-research-cnt s-func-cnt m-b20"><!-- .s-research-cnt -->
+          <h2>現在の検索条件一覧</h2>
+          <p class="m-b10 m-t10 f-aC"><a href="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/air/multi-city/" id="multi-citytop.url" target="_blank"><img src="/air/images/air_list_def/m-item-multicity-menu_img01.jpg" alt="周遊航空券検索できます。ご予約はこちら" /></a></p>
+          <ul id="tabnavi">
+            <li><a id="search_mode_rt" href="#tab01"><span>日本発着</span></a></li>
+            <li><a id="search_mode_oj" href="#tab02"><span>2都市以上</span></a></li>
+            <li><a id="search_mode_os" href="#tab03"><span>海外発着</span></a></li>
+          </ul>
+          <form action="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/air/search/" id="searchForm" method="post" onsubmit="return false;" name="menu_form">
+          <div id="tabcontent"><!-- tabcontent -->
+            <div id="tab01" class="cnt-inner tab-body active"><!-- tab01 -->
+              <p class="f-cLB f-aC m-b10">下記項目を修正して再検索できます</p>
+              <table>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">出　発　地</span><br />
+                    <select id="a_departure" class="departure" style="width: 100%;"><option value="" selected="">都市を選択して下さい</option></select>
+                    <div id="a_data" class="departure_other" style="display:none;">
+                    <p class="f-aC m-b5"><a id="a_select" href="#"><span id="a_otherareaname">上記に記載のない出発地はこちらから</span></a></p>
+                    <input type="hidden" id="a_other_city" class="other_city" />
+                    <div class="pulldown"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">目　的　地</span><br />
+                    <select id="a_dst_area" class="dst_area" onchange="setupCountries('a_dst_area', 'a_dst_country', 'a_destination');" style="width: 100%;"><option value="" selected="">方面を選択して下さい</option></select><br />
+                    <select id="a_dst_country" class="dst_country" onchange="setupCities('a_dst_country', 'a_destination');" style="width: 100%;"><option value="" selected="">国を選択して下さい</option></select><br />
+                    <select id="a_destination" class="destination" style="width: 100%;"><option value="" selected="">都市を選択して下さい</option></select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="departuredate s-research-icon">出　発　日</span><br />
+                    <input value="" type="text" id="a_outDate" class="outDate" style="width: 95%;" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="destinationdate s-research-icon">現地出発日</span><br />
+                    <input value="2015-05-18" type="text" id="a_homeDate" class="homeDate" style="width: 95%;" />
+                  </td>
+                </tr>
+              </table>
+              <input value="DRT" type="hidden" id="mode.drt" class="searchmode" />
+            </div><!-- //.tab01 -->
+            <div id="tab02" class="cnt-inner tab-body"><!-- tab02 -->
+              <p class="f-cLB f-aC m-b10">下記項目を修正して再検索できます</p>
+              <table>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">出　発　地 1</span><br />
+                    <select id="b1_departure" class="departure" style="width: 100%;"><option value="" selected="">都市を選択して下さい</option></select>
+                    <div id="b1_data" class="departure_other" style="display:none;">
+                    <p class="f-aC m-b5"><a id="b1_select" href="#"><span id="b1_otherareaname">上記に記載のない出発地はこちらから</span></a></p>
+                    <input type="hidden" id="b1_other_city" class="other_city" />
+                    <div class="pulldown"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">目　的　地 1</span><br />
+                    <input value="" type="text" id="b_destination1" class="autocomp_departuredestination" style="width: 95%;" />
+                    <input value="" type="hidden" id="b_destination1_area_hide" />
+                    <input value="" type="hidden" id="b_destination1_country_hide" />
+                    <input value="" type="hidden" id="b_destination1_city_hide" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="departuredate s-research-icon">出　発　日 1</span><br />
+                    <input value="" type="text" id="b_outDate" class="outDate" style="width: 95%;" />
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="/images/common/spacer.gif" width="1" height="1" alt="" class="dotline" /></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">出　発　地 2</span><br />
+                    <input value="" type="text" id="b_destination2" class="autocomp_departuredestination" style="width: 95%;" />
+                    <input value="" type="hidden" id="b_destination2_area_hide" />
+                    <input value="" type="hidden" id="b_destination2_country_hide" />
+                    <input value="" type="hidden" id="b_destination2_city_hide" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">目　的　地 2</span><br />
+                    <select id="b2_departure" class="departure" style="width: 100%;"><option value="" selected="">都市を選択して下さい</option></select>
+                    <div id="b2_data" class="departure_other" style="display:none;">
+                    <p class="f-aC m-b5"><a id="b2_select" href="#"><span id="b2_otherareaname">上記に記載のない目的地はこちらから</span></a></p>
+                    <input type="hidden" id="b2_other_city" class="other_city" />
+                    <div class="pulldown"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="departuredate s-research-icon">出　発　日 2</span><br />
+                    <input value="" type="text" id="b_homeDate" class="homeDate" style="width: 95%;" />
+                  </td>
+                </tr>
+              </table>
+              <input value="OJ" type="hidden" id="mode.oj" class="searchmode" />
+            </div><!-- //.tab02 -->
+            <div id="tab03" class="cnt-inner tab-body"><!-- .tab03 -->
+              <p class="f-cLB f-aC m-b10">下記項目を修正して再検索できます</p>
+              <table>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">出　発　地</span><br />
+                    <input value="" type="text" id="c_departure" class="autocomp_departure" style="width: 95%;" />
+                    <input value="" type="hidden" id="c_departure_hide" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <span class="s-research-icon">目　的　地</span><br />
+                    <input value="" type="text" id="c_destination" class="autocomp_destination" style="width: 95%;" />
+                    <input value="" type="hidden" id="c_destination_area_hide" />
+                    <input value="" type="hidden" id="c_destination_country_hide" />
+                    <input value="" type="hidden" id="c_destination_city_hide" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="departuredate s-research-icon">出　発　日</span><br />
+                    <input value="" type="text" id="c_outDate" class="outDate" style="width: 95%;" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="destinationdate s-research-icon">現地出発日</span><br />
+                    <input value="" type="text" id="c_homeDate" class="homeDate" style="width: 95%;" />
+                  </td>
+                </tr>
+              </table>
+              <input value="ORT" type="hidden" id="mode.ort" class="searchmode" />
+            </div><!-- //.tab03 -->
+          </div><!-- // tabcontent -->
+          <div class="cnt-inner"><!-- cnt-inner -->
+            <table>
+              <tr>
+                <td colspan="2"><span class="departure s-research-icon">航空会社</span><br />
+                  <select id="a_airline" class="airline" style="width: 100%;"><option value="-">航空会社指定なし</option></select>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><span class="departure s-research-icon">クラス</span><br />
+                  <select id="a_seatclass" style="width: 100%;"><option value="">指定なし</option><option value="economy">エコノミー</option><option value="peconomy">プレミアムエコノミー</option><option value="business">ビジネス</option><option value="first">ファースト</option></select>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="p-t5">
+                  <span class="people s-research-icon">人数</span><br />
+                  <div class="a_passennger cf">
+                    <div>
+                      大人&nbsp;<select id="a_adtPassenger" class="adtPassenger"><option value="1" selected="selected">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select>人
+                    </div>
+                    <div>
+                      幼児・子供&nbsp;<select id="a_chdPassenger" class="chdPassenger" onchange="selectAge(this);"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select>人
+                      <p>0歳～12歳未満</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="p_age d-close">
+                    <dl>
+                      <dt>幼児(0歳～2歳未満)&nbsp;&nbsp;：</dt>
+                      <dd>
+                        <select id="a_age_inf"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select>&nbsp;人
+                      </dd>
+                      <dt>子供(2歳～12歳未満)：</dt>
+                      <dd>
+                        <select id="a_age_chd"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select>&nbsp;人
+                      </dd>
+                    </dl>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <p class="f-aC m-t5 m-b10"><a href="javascript:void(0);" onclick="searchairlist(); return false;" title="再検索する"><img src="/air/images/air_common/s-research-cnt_btn01.gif" width="100" height="31" alt="再検索する" /></a></p>
+            <p class="f-lM f-cR f-s10">検索項目を修正した場合、「再検索する」ボタンを押さないと結果が反映されません。ご注意ください。</p>
+            <input type="hidden" id="def_departure" name="fmbean.outStartLand" value="" />
+            <input type="hidden" id="def_area" name="fmbean.outArea" value="" />
+            <input type="hidden" id="def_country" name="fmbean.outCountry" value="" />
+            <input type="hidden" id="def_destination" name="fmbean.outArrivalLand" value="" />
+            <input type="hidden" id="def_homedeparture" name="fmbean.homeStartLand" value="" />
+            <input type="hidden" id="def_homedestination" name="fmbean.homeArrivalLand" value="" />
+            <input type="hidden" id="def_outDate" name="fmbean.outDate" />
+            <input type="hidden" id="def_homeDate" name="fmbean.homeDate" />
+            <input type="hidden" id="def_airline" name="fmbean.airLine" value="" />
+            <input type="hidden" id="def_seatclass" name="fmbean.seatClass" />
+            <input type="hidden" id="def_directFlight" name="fmbean.directFlight" />
+            <input type="hidden" id="def_timeMode" name="fmbean.timeMode" />
+            <input type="hidden" id="def_ticketType" name="fmbean.ticketType" />
+            <input type="hidden" id="def_adt" name="fmbean.adtPassengerNum" />
+            <input type="hidden" id="def_chd" name="fmbean.chdPassengerNum" />
+            <input type="hidden" id="def_inf" name="fmbean.infPassengerNum" />
+            <input type="hidden" id="ordertype" name="fmbean.ordertype" />
+            <input type="hidden" id="viewPage" name="fmbean.viewPage" value="" />
+            <input value="DRT" type="hidden" id="searchMode" name="searchMode" />
+            <input type="hidden" id="enc.params" value="" />
+            <input type="hidden" id="operate" value="init" />
+          </div><!-- //cnt-inner -->
+          </form>
+        </div><!-- /.s-research-cnt -->
+        <div class="s-filter-cnt s-func-cnt m-b20"><!-- .s-filter-cnt -->
+          <h2>条件を絞り込む</h2>
+          <div class="cnt-inner">
+          <form action="http://test-4-1814713458.ap-northeast-1.elb.amazonaws.com/air/list/" id="searchNallowForm" method="post" onsubmit="return false;">
+            <table>
+              <tr>
+                <td width="50%">経由<br />
+                  <select id="directFlight"><option value="">指定なし</option><option value="direct">直行のみ</option><option value="nondirect">直行以外</option></select>
+                </td>
+                <td width="50%">出発時間帯<br />
+                  <select id="timeMode"><option value="">指定なし</option><option value="morning">午前発</option><option value="afternoon">午後発</option></select>
+                </td>
+              </tr>
+              
+              <tr>
+                <td colspan="2">券種<br />
+                  <select id="ticketType"><option value="">指定なし</option><option value="pex">PEX</option><option value="iit">格安</option></select>
+                </td>
+              </tr>
+              
+            </table>
+            <p class="f-aC m-b10 m-t5"><a href="javascript:void(0);" title="絞り込み検索する"><img src="/air/images/air_common/s-filter-cnt_btn02.gif" id="s-filter-cnt_btn" alt="絞り込み検索する" height="26" width="179" /></a></p>
+          </form>
+          </div>
+        </div><!-- /.s-filter-cnt -->
+        
+      <p class="m-b20 f-aC"><a href="/special/multi-city/" target="_blank"><img src="/air/images/air_list_def/m-item-multicity-bnr_img01.jpg" alt="周遊航空券を利用して賢く旅をしよう！アレンジ自在！簡単検索でおトク" /></a></p>
+      
+        
+      <p class="m-b20 textC">
+        <img alt="困った時は安心のena(イーナ)ヘルプ" usemap="#help" src="/template/common/img/contents/help_banner_info.gif" />
+        <map id="help" name="help">
+          <area alt="info@ena.travel" href="mailto:info@ena.travel" coords="12,105,217,132" shape="rect" />
+          <area alt="ena(イーナ)オペレーションセンター" href="/ena/support/faq.html" target="_blank" coords="20,188,210,217" shape="rect" />
+        </map>
+      </p>
+      <ul class="s-faq-cnt m-b20">
+        <li class="m-t20"><a href="/ena/support/userguide.html" target="_blank" title="商品を上手に探す方法は？">商品を上手に探す方法は？</a></li>
+        <li><a href="/ena/support/faq.html" target="_blank" title="操作でお困りの方はこちら">操作でお困りの方はこちら</a></li>
+        <li><a href="/ena/support/faq.html#notice16" target="_blank" title="航空券の料金設定の仕組みを教えてください">航空券の料金設定の仕組みを教えてください</a></li>
+      </ul>
+      
+        
+      
+      <p class="m-b20 textC">
+        <a href="http://kokunai.ena.travel/kokunai/air/" target="_blank"><img alt="国内航空券もena(イーナ)" src="/template/common/img/contents/ena_domestic230_230.jpg" /></a>
+      </p>
+      
+        
+        <p><a id="feedback" class="feedback" href="/tour/feedback.html" target="_blank"><img src="/air/images/air_common/ban-subContents_feedback01.gif" alt="ホームページに関するご意見をお聞かせ下さい。" width="240" height="191" /></a></p>
+      
+      </div><!-- /subContents -->
+    </div><!-- /inner-box -->
+  </div><!-- /Content -->
+  <link href="/hotel/js/msgbox/msgboxLight.css?ver=2016121400" rel="stylesheet" type="text/css" />
+  <link href="/template/toppage/js/fancybox/jquery.fancybox.css?ver=2016121400" rel="stylesheet" type="text/css" media="screen" />
+  <link href="/template/toppage/css/othercity.css?ver=2016121400" rel="stylesheet" type="text/css" />
+  <link href="/template/toppage/js/datepicker/css/jquery-ui-1.9.2.custom.min.css?ver=2016121400" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js" charset="UTF-8"></script>
+  <script src="/template/toppage/js/datepicker/jquery-ui-1.9.2.custom.min.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/datepicker/jquery.ui.datepicker-ja.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/datepicker/calendar-holidays.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/all_master.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/messages.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/setupmaster.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/common/js/common.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/common/js/sender.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/common/js/submit_tools.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/hotel/js/busy/jquery.blockUI.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/hotel/js/busy/spin.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/hotel/js/msgbox/jquery.msgbox.min.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/template/toppage/js/fancybox/jquery.fancybox.pack.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/balloon/jquery.balloon.min.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/air_messages.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/air_search_tabs.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/air_search_common.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/air_search_base.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  <script src="/air/js/air_search_list.js?ver=2016121400" type="text/javascript" charset="UTF-8"></script>
+  
+  <hr class="slash" />
+  <div id="Footer"><!-- Footer -->
+    <div class="inner-box default">
+      <div class="page-action">
+        <p class="return-to"><a href="#pagetop" onclick="ReturnToTop(); return false;">▲<strong>ena(イーナ)｜enaイーナの海外格安航空券の予約と購入 ページ上部へ</strong></a></p>
+      </div>
+      <div class="nav">
+        <ul>
+          <li class="first"><a href="/ena/support/mission.html" target="_blank">ミッション</a></li>
+          <li><a href="/ena/info/contact" target="_blank">お問合わせ</a></li>
+          <li><a href="/ena/info/mailmagazine" target="_blank">メルマガ</a></li>
+          <li><a href="/ena/support/company.html" target="_blank">会社概要</a></li>
+          <li class="last"><a href="/ena/support/sl.html" target="_blank">弊社の取り組み</a></li>
+        </ul>
+        <ul>
+          <li class="first"><a href="/ena/support/privacy.html" target="_blank">プライバシーポリシー</a></li>
+          <li><a href="/ena/support/link.html" target="_blank">リンク集</a></li>
+          <li class="last"><a href="/ena/support/system.html" target="_blank">システム提供について</a></li>
+        </ul>
+      </div>
+      <p class="site"><!--
+        --><a title="JATAサイト" target="_blank" href="http://www.jata-net.or.jp/"><img alt="JATA" src="/template/common/img/footer/mark_jata.gif" /></a><!--
+        --><a title="IATAサイト" target="_blank" href="http://www.iata.org/index.htm"><img alt="IATA" src="/template/common/img/footer/mark_iata.gif" /></a><!--
+        --><img alt="エアプラス株式会社 - 観光庁長官登録旅行業第1833号　日本旅行業協会正会員(JATA)　国際航空運送協会(IATA)認可代理店" src="/template/common/img/footer/mark_kokudo.gif" /><!--
+      --></p>
+    </div>
+  </div><!-- /Footer -->
+  <span id="globalHeader">
+  <link rel="stylesheet" type="text/css" href="/template/toppage/css/ticker.css" />
+  <link rel="stylesheet" type="text/css" href="/air/js/noty/css/noty.css" />
+  <script type="text/javascript" src="/template/toppage/js/ticker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/template/toppage/js/ichioshi.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/air/js/noty/packaged/jquery.noty.packaged.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    var show = false;
+    $(document).ready(function () {
+      viewIchioshi();
+    });
+  </script>
+  <script id="apiNotification" type="text/javascript"></script>
+  <script id="_apiNotification" type="text/javascript">
+    function showNotification(){
+      if(show){return;}
+      var notification = noty({
+        text        : "航空券とホテルを同時予約でセット割！<br />お得です。<br /><a href=\"http://www.ena.travel/tour/merit/?utm_source=ena_dest&utm_medium=banner\" target=\"_blank\"><img src=\"/images/common/ban-subContents_dp01.gif\" alt=\"航空券＋ホテル同時予約でセット割引が適用\" height=\"180\" width=\"240\"></a>", 
+        type        : 'error',
+        dismissQueue: true,
+        layout      : 'topRight',
+        theme       : 'Sticky',
+        timeout     : 30000,
+        closeWith   :['button']
+      });
+      show = true;
+    }
+    showNotification();
+  </script>
+  </span>
+<script type="text/javascript" language="javascript">
+/* <![CDATA[ */
+var yahoo_retargeting_id = 'VJX81E21TF';
+var yahoo_retargeting_label = '';
+/* ]]> */
+</script>
+<script type="text/javascript" language="javascript" src="//b92.yahoo.co.jp/js/s_retargeting.js"></script>
+<script type="text/javascript">
+var google_tag_params = {
+flight_originid: $('#def_departure').val(),
+flight_destid: $('#def_destination').val(),
+flight_startdate: $('#def_outDate').val(),
+flight_enddate: $('#def_homeDate').val(),
+flight_pagetype: 'searchresults'
+};
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 971663689;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/971663689/?value=0&amp;guid=ON&amp;script=0" />
+</div>
+</noscript>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NKZMZX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NKZMZX');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>
