@@ -22,11 +22,11 @@
       event: "setAccount",
       account: 25180
     }, {
-      event: "setSiteType",
-      type: "m"
-    }, {
-      event: "viewHome"
-    });
+        event: "setSiteType",
+        type: "m"
+      }, {
+        event: "viewHome"
+      });
   </script>
   <link rel="apple-touch-icon" href="/sp/apple-touch-icon.png">
   <link rel="canonical" href="https://www.ena.travel/">
@@ -41,16 +41,42 @@
           <img src="/m/images/logo.png" width="60" height="" alt="ena イーナ">
         </a>
       </h1>
-      <nav class="header-nav">
+
+
+      <ul class="contents-3">
+        <li>
+          <a href="#">
+            <i class="ena-login" aria-hidden="true"></i>
+            <span>LOGIN</span>
+          </a>
+          <a href="#">
+            <i class="ena-menu"></i>
+            <span>MENU</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="contents-2">
+        <a href="#">
+          <i class="ena-login"></i>
+          <span>LOGIN</span>
+        </a>
+        <a href="#">
+          <i class="fa fa-fw ena-menu"></i>
+          <span>MENU</span>
+        </a>
+      </div>
+
+      <!--       <nav class="header-nav">
         <a href="/mypage/" class="header-nav__item header-nav-item login">
-          <span class="ena-login fa-2x"></span>
+          <h2 class="ena-login"></h2>
           <span class="header-nav-item__caption">Login</span>
         </a>
         <a href="#" class="header-nav__item header-nav-item menu" id="js-show-header-menu">
-          <span class="ena-menu icon-font-size"></span>
+          <h2 class="ena-menu icon-font-sizer"></h2>
           <span class="header-nav-item__caption">Menu</span>
         </a>
-      </nav>
+      </nav> -->
     </header>
 
     <main class="l-main" id="main">

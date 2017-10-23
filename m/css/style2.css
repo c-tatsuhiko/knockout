@@ -21,9 +21,54 @@
   border-radius: 1.0em; }
 
 .icon-font-sizer {
-  font-size: 150%; }
+  content: none;
+  text-align: center; }
 
-.kaigyou {
-  content: "\a"; }
+.contents-2{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-align-item: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: flex;
+    margin: 50px auto;
+    overflow: hidden;
+    float: right;
+    width: -70%;
+}    
 
+.contents-2 a, .contents-2 i{
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+.contents-2 i{
+  font-size:150%;
+}
+
+ul.contents-3{
+  list-style-type: none;
+  float: right;
+}
+
+ul.contents-3 a, ul.contents-3 i{
+  text-align:center;
+  display: block;
+  margin:0 auto;
+}
+
+ul.contents-3 a{
+  color:gray;
+  text-decoration: none;
+}
+
+ul.contents-3 i {
+  font-size:150%;
+  padding: 10px;
+}
+
+ul.nav_menu li {
+  width:100px;
+  float:left;
+}
 /*# sourceMappingURL=style2.css.map */
