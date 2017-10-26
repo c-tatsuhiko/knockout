@@ -2171,6 +2171,8 @@ p {
     letter-spacing: .06em;
 }
 
+
+/*
 .filter-checkbox+.filter-contents__sub-headline,
 .filter-list+.filter-contents__sub-headline {
     border-top: solid 1px #eee;
@@ -2191,6 +2193,7 @@ p {
 .filter-radio.is-child {
     margin-left: 15px;
 }
+*/
 
 .filter-list {
     padding: 10px 15px;
@@ -2819,6 +2822,8 @@ p {
     font-weight: 600;
 }
 
+
+/*
 .checkbox-wrapper {
     position: relative;
     overflow: hidden;
@@ -2880,6 +2885,7 @@ p {
 .checkbox+label>span.is-right {
     margin-left: auto;
 }
+*/
 
 .radio {
     display: none;
