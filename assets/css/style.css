@@ -4622,6 +4622,7 @@ p {
     position: relative;
     width: 56px;
     height: 56px;
+    margin-top:20px;
 }
 
 .header-nav-item.is-alert:before {
@@ -4715,6 +4716,7 @@ p {
 
 .menu-category-tab.is-current {
     background: #355577;
+    color:white;
 }
 
 .menu-category-tab__icon {

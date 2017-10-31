@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=0.6">
-  <base href="/m/">
+  <base href="/assets/">
   <title>ena</title>
-  <link rel="stylesheet" href="/m/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
-  <link rel="stylesheet" href="/m/css/style2.css">
-  <link rel="stylesheet" href="/m/css/font-style.css">
+  <link rel="stylesheet" href="/assets/css/style2.css">
+  <link rel="stylesheet" href="/assets/css/font-style.css">
   <!-- GA // -->
   <script type="text/javascript" src="https://www.google-analytics.com/analytics.js" charset="UTF-8"></script>
   <!-- // GA -->
   <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
-  <script type="text/javascript" src="/m/js/knockout-3.4.2.js"></script>
+  <script type="text/javascript" src="/assets/js/knockout-3.4.2.js"></script>
   <script type="text/javascript">
     window.criteo_q = window.criteo_q || [];
     window.criteo_q.push({
@@ -33,123 +33,290 @@
 </head>
 
 <body class="page-search is-hide-pagetop" id="body">
-  <div class="l-wrapper" id="wrapper">
+  <div id="app">
     <div class="alert-box" id="js-alert-box"></div>
     <header class="l-header header">
       <h1 class="header-logo">
-        <a href="/m/">
-          <img src="/m/images/logo.png" width="60" height="" alt="ena イーナ">
+        <a href="/assets/">
+          <img src="/assets/images/logo.png" width="60" height="" alt="ena イーナ">
         </a>
       </h1>
-      <div class="header-item">
-        <a href="https://www.ena.travel/mypage/">
-          <i class="ena-login"></i>
-          <span>LOGIN</span>
+      <nav class="header-nav">
+        <a href="/mypage/" class="header-nav__item header-nav-item login">
+          <i class="ena-login" id="icon-sizer"></i>
+          <span class="header-nav-item__caption">Login</span>
         </a>
-        <a href="#">
+        <a href="#" class="header-nav__item header-nav-item menu" id="js-show-header-menu">
           <i class="ena-menu"></i>
-          <span>MENU</span>
+          <span class="header-nav-item__caption">Menu</span>
         </a>
+      </nav>
+      <div class="header-menu" id="js-header-menu">
+        <div class="header-menu__header">
+          <a href="#" class="header-nav-item" id="js-close-header-menu">
+            <i class="ena-close"></i>
+            <span class="header-nav-item__caption">Close</span>
+          </a>
+        </div>
+        <div class="menu-category">
+          <a href="air/" class="menu-category__item menu-category-tab">
+            <span class="menu-category-tab__icon">
+              <svg role="image" class="svg-icon">
+                <use xlink:href="/assets/images/icons.svg#global">
+              </svg>
+            </span>
+            <span class="menu-category-tab__title">
+              <span>海外航空券</span>
+            </span>
+          </a>
+          <a href="tour/" class="menu-category__item menu-category-tab">
+            <span class="menu-category-tab__icon">
+              <svg role="image" class="svg-icon">
+                <use xlink:href="/assets/images/icons.svg#dp">
+              </svg>
+            </span>
+            <span class="menu-category-tab__title">
+              <span>航空券＋ホテル</span>
+              <span class="note">（セット割）</span>
+            </span>
+          </a>
+          <a href="hotel/" class="menu-category__item menu-category-tab is-current">
+            <span class="menu-category-tab__icon">
+              <svg role="image" class="svg-icon">
+                <use xlink:href="/assets/images/icons.svg#hotel">
+              </svg>
+            </span>
+            <span class="menu-category-tab__title">
+              <span>海外ホテル</span>
+              <span class="note">（最低価格保証）</span>
+            </span>
+          </a>
+          <a href="https://kokunai.ena.travel/kokunai/sp/air/
+" class="menu-category__item menu-category-tab">
+            <span class="menu-category-tab__icon">
+              <svg role="image" class="svg-icon">
+                <use xlink:href="/assets/images/icons.svg#domestic">
+              </svg>
+            </span>
+            <span class="menu-category-tab__title">
+              <span>国内航空券</span>
+            </span>
+          </a>
+        </div>
+        <div class="pickup-menu">
+          <a href="http://optional.ena.travel/" class="pickup-menu__item">
+            オプショナル
+            <br>ツアー
+          </a>
+          <a href="//www.ena.travel/sp/rentacar/" class="pickup-menu__item">
+            レンタカー
+          </a>
+          <a href="//www.ena.travel/insurance/" class="pickup-menu__item">
+            海外旅行
+            <br>保険
+          </a>
+          <a href="//www.ena.travel/ena/info/mailmagazine/" class="pickup-menu__item">
+            無料
+            <br>メルマガ
+          </a>
+          <a href="//www.ena.travel/chart/" class="pickup-menu__item">
+            相場
+            <br>チャート
+          </a>
+        </div>
+        <div class="header-menu__contents">
+          <div class="menu-list">
+            <div class="menu-list__section js-accordion-wrapper is-open">
+              <a href="#" class="menu-list-item is-accordion js-toggle-accordion is-open">
+                <span class="menu-list-item__text">
+                  海外用サポートメニュー
+                </span>
+              </a>
+              <div class="js-accordion-contents is-open">
+                <a href="/assets/ena/support/description.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#beginner">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    はじめての方へ
+                  </span>
+                </a>
+                <a href="/ena/support/userguide.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#guidebook">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    ena(イーナ)の使い方
+                  </span>
+                </a>
+                <a href="https://www.ena.travel/ena/support/faq.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#question">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    よくある質問
+                  </span>
+                </a>
+                <a href="/assets/ena/support/flow.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#flow">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    ご予約後の流れ
+                  </span>
+                </a>
+                <a href="/sp/ena/support/travel_docs.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#docs">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    取消・条件書
+                  </span>
+                </a>
+                <a href="/ena/info/contact" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#mail">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    お問い合わせ
+                  </span>
+                </a>
+                <a href="/assets/ena/support/company.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#company">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    会社概要
+                  </span>
+                </a>
+                <a href="/sp/ena/support/privacy.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#privacy">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    プライバシーポリシー
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="menu-list__section js-accordion-wrapper">
+              <a href="#" class="menu-list-item is-accordion js-toggle-accordion">
+                <span class="menu-list-item__text">
+                  国内用サポートメニュー
+                </span>
+              </a>
+              <div class="js-accordion-contents">
+                <a href="https://kokunai.ena.travel/kokunai/air/support/first.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#beginner">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    はじめての方へ
+                  </span>
+                </a>
+                <a href="https://kokunai.ena.travel/kokunai/air/support/application.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#entry">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    お申込み方法
+                  </span>
+                </a>
+                <a href="https://kokunai.ena.travel/kokunai/air/support/payment.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#bill">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    お支払方法
+                  </span>
+                </a>
+                <a href="https://kokunai.ena.travel/kokunai/air/support/reciept.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#delivery">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    お受け取り方法
+                  </span>
+                </a>
+                <a href="https://kokunai.ena.travel/kokunai/air/support/cancel.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#cancel">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    取消手数料について
+                  </span>
+                </a>
+                <a href="https://kokunai.ena.travel/kokunai/air/support/question.html" class="menu-list-item">
+                  <span class="menu-list-item__icon">
+                    <svg role="image" class="svg-icon">
+                      <use xlink:href="/assets/images/icons.svg#question">
+                    </svg>
+                  </span>
+                  <span class="menu-list-item__text">
+                    よくある質問
+                  </span>
+                </a>
+              </div>
+            </div>
+            <a href="/assets/
+" class="menu-list-item is-go-top">
+              <span class="menu-list-item__text">
+                トップページに戻る
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </header>
     <main class="l-main" id="main">
       <section class="l-section">
-        <div class="search-error" style="display: none;">
-          <p></p>
-        </div>
-
-        <header class="section-header">
-          <h2 class="page-title">海外航空券検索</h2>
-        </header>
         <div class="search-tabs">
-          <a href="air/" class="search-tabs__item tab-item is-current">往復</a>
-          <a href="air.hktml" class="search-tabs__item tab-item">片道</a>
-          <a href="air/multi-city/" class="search-tabs__item tab-item">周遊</a>
-          <a href="air/abroad/" class="search-tabs__item tab-item">海外発着</a>
+          <a href="/air" class="search-tabs__item tab-item">往復</a>
+          <a href="/oneway" class="search-tabs__item tab-item">片道</a>
+          <a href="/multi-city" class="search-tabs__item tab-item">周遊</a>
+          <a href="/abroad" class="search-tabs__item tab-item">海外発着</a>
         </div>
-        <ul class="testcontent">
-          <li class="testcontent">
-            <a href="#">
-              <i class="ena-takeoff"></i>
-              <span>出発地</span>
-            </a>
-          </li>
-          <li class="testcontent">
-            <a href="#">
-              <i class="ena-landing"></i>
-              <span>目的地</span>
-            </a>
-          </li>
-          <li class="testcontent">
-            <a href="#">
-              <i class="ena-calendar"></i>
-              <span>日程</span>
-            </a>
-          </li>
-          <li class="testcontent">
-            <label for="checkbox" id="direct">直行のみ</label>
-            <input type="checkbox" name="sample-checkbox" id="checkbox" />
-            <label for="checkbox"></label>
-          </li>
-          <li>
-            <button class="selector-button">
-              <div class="addon">
-                <i class="ena-room"></i>
-                <span>部屋</span>
-              </div>
-              <p class="persons">×</p>
-              <span></span>
-              <div class="addon">
-                <i class="ena-adult"></i>
-                <span>大人</span>
-              </div>
-              <p class="persons">×</p>
-              <span></span>
-              <div class="addon">
-                <i class="ena-child"></i>
-                <span>子供</span>
-              </div>
-              <p class="persons">×</p>
-              <span></span>
-            </button>
-          </li>
-          <li class="search-option-test">
-            <a href="#">
-              <span>詳細オプション</span>
-            </a>
-            <span class="plus">＋</span>
-          </li>
-          <li class="button-search">
-            <a href="#">
-              <span>検索する</span>
-            </a>
-          </li>
-          <li class="button-search is-strong">
-            <a href="#">
-              <p class="ena-dp" id="triangle"></p>
-              <p class="circle">得</p>
-              <span>セット割で検索する</span>
-            </a>
-          </li>
-          <li>
-            <span class="triangle"></span>
-          </li>
-        </ul>
         <script type="text/javascript">
           var spBackFlg = false;
         </script>
 </body>
 <script src="//www.ena.travel/template/toppage/js/all_master.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="/m/js/wNumb.js"></script>
-<script src="/m/js/nouislider.min.js"></script>
-<script src="/m/js/tipso.min.js"></script>
-<script src="/m/js/slick.min.js"></script>
-<script src="/m/js/jquery-ui-1.10.4.custom.min.js"></script>
-<script src="/m/js/jquery.easing.1.3.js"></script>
-<script src="/m/js/jquery.ui.touch-punch.js"></script>
-<script src="/m/js/sample.js"></script>
-<script src="/m/js/main.js"></script>
+<script src="/assets/js/wNumb.js"></script>
+<script src="/assets/js/nouislider.min.js"></script>
+<script src="/assets/js/tipso.min.js"></script>
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="/assets/js/jquery.easing.1.3.js"></script>
+<script src="/assets/js/jquery.ui.touch-punch.js"></script>
+<script src="/assets/js/sample.js"></script>
+<script src="/assets/js/main.js"></script>
 <footer class="l-footer footer" id="footer">
   <a href="#" class="footer__link-pc">PCサイトを見る</a>
   <p class="footer__copyright">@AIRPLUS co.,ltd.</p>
