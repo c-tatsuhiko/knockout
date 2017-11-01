@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=0.6">
+    <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,user-scalable=no">
     <title>ena</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
@@ -34,227 +34,9 @@
 <body class="page-search is-hide-pagetop" id="body">
     <div id="app">
         <div class="alert-box" id="js-alert-box"></div>
-        <header class="l-header header">
-            <h1 class="header-logo">
-                <a href="/assets/">
-                    <img src="/assets/images/logo.png" width="60" height="" alt="ena イーナ">
-                </a>
-            </h1>
-            <nav class="header-nav">
-                <a href="/mypage/" class="header-nav__item header-nav-item login">
-                    <i class="ena-login" id="icon-sizer"></i>
-                    <span class="header-nav-item__caption">Login</span>
-                </a>
-                <a href="#" class="header-nav__item header-nav-item menu" id="js-show-header-menu">
-                    <i class="ena-menu" id="icon-sizer"></i>
-                    <span class="header-nav-item__caption">Menu</span>
-                </a>
-            </nav>
-            <div class="header-menu" id="js-header-menu">
-                <div class="header-menu__header">
-                    <a href="#" class="header-nav-item" id="js-close-header-menu">
-                        <i class="ena-close" id="icon-sizer"></i>
-                        <span class="header-nav-item__caption">Close</span>
-                    </a>
-                </div>
-                <div class="menu-category">
-                    <a href="air/" class="menu-category__item menu-category-tab">
-                        <span class="menu-category-tab__icon">
-                            <i class="ena-global" id="icon-sizer2"></i>
-                        </span>
-                        <span class="menu-category-tab__title">
-                            <span>海外航空券</span>
-                        </span>
-                    </a>
-                    <a href="tour/" class="menu-category__item menu-category-tab">
-                        <span class="menu-category-tab__icon">
-                            <i class="ena-dp" id="icon-sizer2"></i>
-                        </span>
-                        <span class="menu-category-tab__title">
-                            <span>航空券＋ホテル</span>
-                            <span class="note">（セット割）</span>
-                        </span>
-                    </a>
-                    <a href="hotel/" class="menu-category__item menu-category-tab is-current">
-                        <span class="menu-category-tab__icon">
-                            <i class="ena-hotel" id="icon-sizer2"></i>
-                        </span>
-                        <span class="menu-category-tab__title">
-                            <span>海外ホテル</span>
-                            <span class="note">（最低価格保証）</span>
-                        </span>
-                    </a>
-                    <a href="https://kokunai.ena.travel/kokunai/sp/air/" class="menu-category__item menu-category-tab">
-                        <span class="menu-category-tab__icon">
-                            <i class="ena-domestic" id="icon-sizer2"></i>
-                        </span>
-                        <span class="menu-category-tab__title">
-                            <span>国内航空券</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="pickup-menu">
-                    <a href="http://optional.ena.travel/" class="pickup-menu__item">
-                        オプショナル
-                        <br>ツアー
-                    </a>
-                    <a href="//www.ena.travel/sp/rentacar/" class="pickup-menu__item">
-                        レンタカー
-                    </a>
-                    <a href="//www.ena.travel/insurance/" class="pickup-menu__item">
-                        海外旅行
-                        <br>保険
-                    </a>
-                    <a href="//www.ena.travel/ena/info/mailmagazine/" class="pickup-menu__item">
-                        無料
-                        <br>メルマガ
-                    </a>
-                    <a href="//www.ena.travel/chart/" class="pickup-menu__item">
-                        相場
-                        <br>チャート
-                    </a>
-                </div>
-                <div class="header-menu__contents">
-                    <div class="menu-list">
-                        <div class="menu-list__section js-accordion-wrapper is-open">
-                            <a href="#" class="menu-list-item is-accordion js-toggle-accordion is-open">
-                                <span class="menu-list-item__text">
-                                    海外用サポートメニュー
-                                </span>
-                            </a>
-                            <div class="js-accordion-contents is-open">
-                                <a href="/assets/ena/support/description.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-beginner"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        はじめての方へ
-                                    </span>
-                                </a>
-                                <a href="/ena/support/userguide.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-guidebook"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        ena(イーナ)の使い方
-                                    </span>
-                                </a>
-                                <a href="https://www.ena.travel/ena/support/faq.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-question"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        よくある質問
-                                    </span>
-                                </a>
-                                <a href="/assets/ena/support/flow.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-flow"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        ご予約後の流れ
-                                    </span>
-                                </a>
-                                <a href="/sp/ena/support/travel_docs.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-docs"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        取消・条件書
-                                    </span>
-                                </a>
-                                <a href="/ena/info/contact" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-mail"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        お問い合わせ
-                                    </span>
-                                </a>
-                                <a href="/assets/ena/support/company.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-company"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        会社概要
-                                    </span>
-                                </a>
-                                <a href="/sp/ena/support/privacy.html" class="menu-list-item">
-                                    <span class="menu-bar-icon">
-                                        <i class="ena-privacy"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        プライバシーポリシー
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="menu-list__section js-accordion-wrapper">
-                            <a href="#" class="menu-list-item is-accordion js-toggle-accordion">
-                                <span class="menu-list-item__text">
-                                    国内用サポートメニュー
-                                </span>
-                            </a>
-                            <div class="js-accordion-contents">
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/first.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-beginner"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        はじめての方へ
-                                    </span>
-                                </a>
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/application.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-entry"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        お申込み方法
-                                    </span>
-                                </a>
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/payment.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-bill"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        お支払方法
-                                    </span>
-                                </a>
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/reciept.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-ticket"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        お受け取り方法
-                                    </span>
-                                </a>
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/cancel.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-cancel"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        取消手数料について
-                                    </span>
-                                </a>
-                                <a href="https://kokunai.ena.travel/kokunai/air/support/question.html" class="menu-list-item">
-                                    <span class="menu-list-item__icon">
-                                        <i class="ena-question"></i>
-                                    </span>
-                                    <span class="menu-list-item__text">
-                                        よくある質問
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <a href="/assets/" class="menu-list-item is-go-top">
-                            <span class="menu-list-item__text">
-                                トップページに戻る
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!--ヘッダーファイルを分割しました。
+        sample.jsに処理記述済み。-->
+        <div id="header"></div>
         <!--ここからbody-->
         <main class="l-main" id="main">
             <section class="l-section">
@@ -269,10 +51,86 @@
                     <div class="search-tabs">
                         <a href="/air" class="search-tabs__item tab-item is-current">往復</a>
                         <a href="/oneway" class="search-tabs__item tab-item">片道</a>
-                        <a href="air/multi-city/" class="search-tabs__item tab-item">周遊</a>
-                        <a href="air/abroad/" class="search-tabs__item tab-item">海外発着</a>
+                        <a href="/multi-city" class="search-tabs__item tab-item">周遊</a>
+                        <a href="/abroad/" class="search-tabs__item tab-item">海外発着</a>
                     </div>
-                    <ul class="testcontent">
+                    <!--CSS再検証-->
+                    <ul class="search-box">
+                        <li class="wrapper">
+                            <button class="search-button button-size-50" style="margin-right:10px;">
+                                <span class="addon">
+                                    <i class="ena-takeoff" id="icon-sizer"></i>
+                                    <span>出発地</span>
+                                </span>
+                            </button>
+                            <button class="search-button button-size-50">
+                                <span class="addon">
+                                    <i class="ena-landing"></i>
+                                    <span>出発地</span>
+                                </span>
+                            </button>
+                        </li>
+                        <li class="wrapper">
+                            <button class="search-button button-size-70">
+                                <span class="addon">
+                                    <i class="ena-calendar"></i>
+                                    <span>日程</span>
+                                </span>
+                            </button>
+                            <span class="checkbox-size">
+                                <label for="checkbox" id="checkbox-name">直行のみ</label>
+                                <input type="checkbox" name="sample-checkbox" id="checkbox" />
+                                <label for="checkbox"></label>
+                            </span>
+                        </li>
+                        <li class="wrapper">
+                            <button class="search-button">
+                                <div class="addon">
+                                    <i class="ena-room"></i>
+                                    <span>部屋</span>
+                                </div>
+                                <p class="persons">×</p>
+                                <span></span>
+                                <div class="addon">
+                                    <i class="ena-adult"></i>
+                                    <span>大人</span>
+                                </div>
+                                <p class="persons">×</p>
+                                <span></span>
+                                <div class="addon">
+                                    <i class="ena-child"></i>
+                                    <span>子供</span>
+                                </div>
+                                <p class="persons">×</p>
+                                <span></span>
+                            </button>
+                        </li>
+                        <li class="centerling">
+                            <button class="search-option-test">
+                                <span>
+                                    <span>詳細オプション</span>
+                                    <span class="plus">＋</span>
+                                </span>
+                            </button>
+                        </li>
+                        <li class="wrapper">
+                            <button class="btn-primary btn-md">
+                                <span>
+                                    <span>検索する</span>
+                                </span>
+                            </button>
+                        </li>
+                        <li class="wrapper">
+                            <button class="btn-primary btn-md btn-color">
+                                <p class="ena-dp" id="triangle"></p>
+                                <p class="circle">得</p>
+                                <span>セット割で検索する</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!--再検証END-->
+                    <!--                     <ul class="testcontent">
                         <li class="testcontent">
                             <a href="#">
                                 <i class="ena-takeoff"></i>
@@ -339,8 +197,7 @@
                         </li>
                         <li>
                             <span class="triangle"></span>
-                        </li>
-                    </ul>
+                    </ul> -->
                     <script type="text/javascript">
                         var spBackFlg = false;
                     </script>

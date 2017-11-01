@@ -1,0 +1,222 @@
+<script src="/assets/js/main.js"></script>
+<header class="l-header header">
+    <h1 class="header-logo">
+        <a href="/assets/">
+            <img src="/assets/images/logo.png" width="60" height="" alt="ena イーナ">
+        </a>
+    </h1>
+    <nav class="header-nav">
+        <a href="/mypage/" class="header-nav__item header-nav-item login">
+            <i class="ena-login" id="icon-sizer"></i>
+            <span class="header-nav-item__caption">Login</span>
+        </a>
+        <a href="#" class="header-nav__item header-nav-item menu" id="js-show-header-menu">
+            <i class="ena-menu" id="icon-sizer"></i>
+            <span class="header-nav-item__caption">Menu</span>
+        </a>
+    </nav>
+    <div class="header-menu" id="js-header-menu">
+        <div class="header-menu__header">
+            <a href="#" class="header-nav-item" id="js-close-header-menu">
+                <i class="ena-close" id="icon-sizer"></i>
+                <span class="header-nav-item__caption">Close</span>
+            </a>
+        </div>
+        <div class="menu-category">
+            <a href="air/" class="menu-category__item menu-category-tab">
+                <span class="menu-category-tab__icon">
+                    <i class="ena-global" id="icon-sizer2"></i>
+                </span>
+                <span class="menu-category-tab__title">
+                    <span>海外航空券</span>
+                </span>
+            </a>
+            <a href="tour/" class="menu-category__item menu-category-tab">
+                <span class="menu-category-tab__icon">
+                    <i class="ena-dp" id="icon-sizer2"></i>
+                </span>
+                <span class="menu-category-tab__title">
+                    <span>航空券＋ホテル</span>
+                    <span class="note">（セット割）</span>
+                </span>
+            </a>
+            <a href="hotel/" class="menu-category__item menu-category-tab is-current">
+                <span class="menu-category-tab__icon">
+                    <i class="ena-hotel" id="icon-sizer2"></i>
+                </span>
+                <span class="menu-category-tab__title">
+                    <span>海外ホテル</span>
+                    <span class="note">（最低価格保証）</span>
+                </span>
+            </a>
+            <a href="https://kokunai.ena.travel/kokunai/sp/air/" class="menu-category__item menu-category-tab">
+                <span class="menu-category-tab__icon">
+                    <i class="ena-domestic" id="icon-sizer2"></i>
+                </span>
+                <span class="menu-category-tab__title">
+                    <span>国内航空券</span>
+                </span>
+            </a>
+        </div>
+        <div class="pickup-menu">
+            <a href="http://optional.ena.travel/" class="pickup-menu__item">
+                オプショナル
+                <br>ツアー
+            </a>
+            <a href="//www.ena.travel/sp/rentacar/" class="pickup-menu__item">
+                レンタカー
+            </a>
+            <a href="//www.ena.travel/insurance/" class="pickup-menu__item">
+                海外旅行
+                <br>保険
+            </a>
+            <a href="//www.ena.travel/ena/info/mailmagazine/" class="pickup-menu__item">
+                無料
+                <br>メルマガ
+            </a>
+            <a href="//www.ena.travel/chart/" class="pickup-menu__item">
+                相場
+                <br>チャート
+            </a>
+        </div>
+        <div class="header-menu__contents">
+            <div class="menu-list">
+                <div class="menu-list__section js-accordion-wrapper is-open">
+                    <a href="#" class="menu-list-item is-accordion js-toggle-accordion is-open">
+                        <span class="menu-list-item__text">
+                            海外用サポートメニュー
+                        </span>
+                    </a>
+                    <div class="js-accordion-contents is-open">
+                        <a href="/assets/ena/support/description.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-beginner"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                はじめての方へ
+                            </span>
+                        </a>
+                        <a href="/ena/support/userguide.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-guidebook"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                ena(イーナ)の使い方
+                            </span>
+                        </a>
+                        <a href="https://www.ena.travel/ena/support/faq.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-question"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                よくある質問
+                            </span>
+                        </a>
+                        <a href="/assets/ena/support/flow.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-flow"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                ご予約後の流れ
+                            </span>
+                        </a>
+                        <a href="/sp/ena/support/travel_docs.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-docs"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                取消・条件書
+                            </span>
+                        </a>
+                        <a href="/ena/info/contact" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-mail"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                お問い合わせ
+                            </span>
+                        </a>
+                        <a href="/assets/ena/support/company.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-company"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                会社概要
+                            </span>
+                        </a>
+                        <a href="/sp/ena/support/privacy.html" class="menu-list-item">
+                            <span class="menu-bar-icon">
+                                <i class="ena-privacy"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                プライバシーポリシー
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-list__section js-accordion-wrapper">
+                    <a href="#" class="menu-list-item is-accordion js-toggle-accordion">
+                        <span class="menu-list-item__text">
+                            国内用サポートメニュー
+                        </span>
+                    </a>
+                    <div class="js-accordion-contents">
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/first.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-beginner"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                はじめての方へ
+                            </span>
+                        </a>
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/application.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-entry"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                お申込み方法
+                            </span>
+                        </a>
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/payment.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-bill"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                お支払方法
+                            </span>
+                        </a>
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/reciept.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-ticket"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                お受け取り方法
+                            </span>
+                        </a>
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/cancel.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-cancel"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                取消手数料について
+                            </span>
+                        </a>
+                        <a href="https://kokunai.ena.travel/kokunai/air/support/question.html" class="menu-list-item">
+                            <span class="menu-list-item__icon">
+                                <i class="ena-question"></i>
+                            </span>
+                            <span class="menu-list-item__text">
+                                よくある質問
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a href="/assets/" class="menu-list-item is-go-top">
+                    <span class="menu-list-item__text">
+                        トップページに戻る
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

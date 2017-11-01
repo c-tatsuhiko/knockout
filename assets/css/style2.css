@@ -1,116 +1,97 @@
 @import url(../../node_modules/normalize.css/normalize.css);
-@import url(font-style.css);
-.search-item-test {
-  align-items: center;
-  border-radius: 1.0em;
+
+/*再検証*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+main .search-box {
   border: solid 1px #355577;
-  background: #c8e0fa;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.1rem;
-  font-weight: 600;
-  height: 43.8%;
-  justify-content: center;
-  letter-spacing: .02em;
-  padding: 10px 0;
-  width: 100%;
-  position: relative;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-align-items: center;
-  -webkit-justify-content: center;
-}
-
-.menu-bar-icon {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-right: 15px;
-  font-size: 2rem;
-}
-
-#icon-sizer,
-#icon-sizer2 {
-  font-size: 1.4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#icon-sizer2 {
-  font-size: 3.0rem !important;
-}
-
-#icon-sizer_selector {
-  color: white;
-}
-
-.header-item {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  -webkit-align-item: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: flex;
-  overflow: hidden;
-  float: right;
-  width: auto;
-  margin-left: auto;
-}
-
-.header-item a,
-.header-item i {
-  display: block;
-  text-align: center;
-  margin-right: 10px;
-}
-
-.header-item i {
-  font-size: 140%;
-}
-
-.header-item span {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-ul.testcontent {
-  position: relative;
-  background: #ffffff;
-  margin-top: 10px;
-  padding: .938em;
-  border: solid 1px #355577;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
-  list-style-type: none;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-
-li.testcontent {
-  float: left;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: block;
-  list-style: none;
-  position: relative;
-  border: solid 1px #355577;
-  background: #c8e0fa;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0, 0.14);
   border-radius: 4px;
-  text-align: center;
-  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 15px;
   font-weight: 600;
-  letter-spacing: .02em;
-  width: 100%;
-  margin-bottom: 1.0rem;
 }
 
-.selector-button {
+main .wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+main .checkbox-size {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+main #checkbox-name {
+  margin-top: -30px;
+}
+
+main .search-option-test {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+main .centerling {
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+main .plus {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-color: #ff6c00;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-top: 3.5px;
+}
+
+
+/*要素のサイズを半分にする時*/
+
+main .button-size-50 {
+  width: calc(50%-5px);
+}
+
+
+/*要素のサイズを7割りにしたいとき*/
+
+main .button-size-70 {
+  width: calc(65%-10px);
+}
+
+main .search-button {
   font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,7 +121,7 @@ li.testcontent {
   align-items: center;
 }
 
-.addon {
+main .addon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,125 +132,69 @@ li.testcontent {
   -ms-flex-direction: column;
 }
 
-#direct {
-  position: flex;
-  top: 0px;
-  left: 0px;
-}
-
-li.testcontent a,
-li.testcontent i,
-li.testcontent span {
-  display: flex;
-  display: table-cell;
-  font-size: 1.3rem;
+.btn-md {
+  font-size: 14.4pt;
   font-weight: 600;
-  list-style: none;
-  display: block;
-  margin: auto;
+  line-height: 36pt;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-decoration: none;
+  outline: none;
 }
 
-li.testcontent i {
-  font-size: 1.8rem;
-}
-
-li.testcontent label {
-  display: block;
-}
-
-li:nth-of-type(-n + 2) {
-  margin-right: 3% !important;
-  width: 47%;
-}
-
-li:nth-of-type(3) {
-  width: 80% !important;
-}
-
-li:nth-of-type(4) {
-  width: 17% !important;
+.btn-primary {
   position: relative;
-  background: white;
-  border: solid 0 white;
-  padding: 5pt;
-  margin-top: -3pt;
-  margin-left: 0pt;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.search-option-test {
   display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
   width: 100%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.persons {
-  font-size: 9.6pt;
-  line-height: 1.5;
-  padding-left: 12pt;
-}
-
-.plus {
-  display: inline-block;
-  position: relative;
-  margin-left: .5em;
-  width: 22px;
-  height: 22px;
-  background-color: #ff6c00;
-  border-radius: 50%;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.plus::after {
-  display: inline-block;
-  position: absolute;
-  margin-left: .5em;
-  width: 22px;
-  height: 22px;
-  background-color: #ff6c00;
-  border-radius: 50%;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-li.button-search {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 4px;
-  width: 100%;
-  border-radius: 4px;
-  font-size: 1.6rem;
-  font-weight: 600;
   text-align: center;
-  line-height: 50px;
+  letter-spacing: 1.44pt;
+  color: rgb(255, 255, 255);
+  background-color: rgb(53, 85, 119);
+  background-image: linear-gradient(rgb(70, 132, 199), rgb(50, 112, 179));
+  box-shadow: rgba(255, 255, 255, 0.4) 1px 1px 0px inset, rgb(32, 84, 140) 0px 4px;
   transition: none;
-  border: 1px solid #2766a8;
-  background-image: linear-gradient(to bottom, #4684c7, #3270b3);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4), 0 4px #20548c;
-  letter-spacing: .12em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(39, 102, 168);
+  border-image: initial;
+  border-radius: 3pt;
 }
 
-li.button-search a {
-  display: block;
-}
-
-li.button-search span {
-  color: white;
-}
-
-li.is-strong {
-  margin-top: 10px;
-  background-image: linear-gradient(to bottom, #ff6c00, #f25f00);
+.btn-color {
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4), 0 4px #e14e00;
   border-color: #e14e00;
+  background-color: #ff6c00;
+  background-image: linear-gradient(to bottom, #ff6c00, #f25f00);
+}
+
+
+/**/
+
+.menu-bar-icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 15px;
+  font-size: 2rem;
+}
+
+#icon-sizer,
+#icon-sizer2 {
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#icon-sizer2 {
+  font-size: 3.0rem !important;
+}
+
+#icon-sizer_selector {
+  color: white;
 }
 
 .circle {
@@ -298,8 +223,8 @@ li.is-strong {
 }
 
 #triangle::after {
-  border-left: 12px solid white;
-  border-top: 23px solid transparent;
+  border-left: 6px solid white;
+  border-top: 16px solid transparent;
   border-bottom: 28px solid transparent;
   content: "";
   position: absolute;
@@ -354,7 +279,7 @@ input[type=checkbox]+label {
     display: block;
     width: 18px;
     height: 18px;
-    margin-top: -10px;
+    margin-top: 7px;
     margin-left: 10px;
     background-color: white;
     border-radius: 2px;
@@ -381,7 +306,7 @@ input[type=checkbox]+label {
     left: 3px;
     width: 16px;
     height: 8px;
-    margin-top: -8px;
+    margin-top: 8px;
     border-left: 1.5px solid white;
     border-bottom: 1.5px solid white;
     -webkit-transform: rotate(-45deg);
