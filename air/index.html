@@ -37,7 +37,6 @@
         <!--ヘッダーファイルを分割しました。
         sample.jsに処理記述済み。-->
         <div id="header"></div>
-        <!--ここからbody-->
         <main class="l-main" id="main">
             <section class="l-section">
                 <div class="search-error" style="display: none;">
@@ -54,31 +53,30 @@
                         <a href="/multi-city" class="search-tabs__item tab-item">周遊</a>
                         <a href="/abroad/" class="search-tabs__item tab-item">海外発着</a>
                     </div>
-                    <!--CSS再検証-->
                     <ul class="search-box">
                         <li class="wrapper">
-                            <button class="search-button button-size-50" style="margin-right:10px;">
+                            <button class="search-button px-10">
                                 <span class="addon">
-                                    <i class="ena-takeoff" id="icon-sizer"></i>
+                                    <i class="ena-takeoff icon-sizer"></i>
                                     <span>出発地</span>
                                 </span>
                             </button>
-                            <button class="search-button button-size-50">
+                            <button class="search-button">
                                 <span class="addon">
-                                    <i class="ena-landing"></i>
+                                    <i class="ena-landing icon-sizer"></i>
                                     <span>出発地</span>
                                 </span>
                             </button>
                         </li>
                         <li class="wrapper">
-                            <button class="search-button button-size-70">
+                            <button class="search-button" data-bind="click:function(){modal('calendar')}">
                                 <span class="addon">
-                                    <i class="ena-calendar"></i>
+                                    <i class="ena-calendar icon-sizer"></i>
                                     <span>日程</span>
                                 </span>
                             </button>
                             <span class="checkbox-size">
-                                <label for="checkbox" id="checkbox-name">直行のみ</label>
+                                <label for="checkbox" class="checkbox-name">直行のみ</label>
                                 <input type="checkbox" name="sample-checkbox" id="checkbox" />
                                 <label for="checkbox"></label>
                             </span>
@@ -86,32 +84,43 @@
                         <li class="wrapper">
                             <button class="search-button">
                                 <div class="addon">
-                                    <i class="ena-room"></i>
+                                    <i class="ena-room icon-sizer"></i>
                                     <span>部屋</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                                 <div class="addon">
-                                    <i class="ena-adult"></i>
+                                    <i class="ena-adult icon-sizer"></i>
                                     <span>大人</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                                 <div class="addon">
-                                    <i class="ena-child"></i>
+                                    <i class="ena-child icon-sizer"></i>
                                     <span>子供</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                             </button>
                         </li>
-                        <li class="centerling">
+                        <li class="centering">
                             <button class="search-option-test">
                                 <span>
                                     <span>詳細オプション</span>
-                                    <span class="plus">＋</span>
+                                    <span class="plus"></span>
                                 </span>
                             </button>
+                            <li class="wrapper">
+                                <button class="search-button btn-white">
+                                    <div class="btn-float">
+                                        <i class="ena-aircraft" style="float:left;"></i>
+                                        <span>航空会社</span>
+                                    </div>
+                                    <div>
+                                        <span>指定なし</span>
+                                    </div>
+                                </button>
+                            </li>
                         </li>
                         <li class="wrapper">
                             <button class="btn-primary btn-md">
@@ -128,76 +137,6 @@
                             </button>
                         </li>
                     </ul>
-
-                    <!--再検証END-->
-                    <!--                     <ul class="testcontent">
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-takeoff"></i>
-                                <span>出発地</span>
-                            </a>
-                        </li>
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-landing"></i>
-                                <span>目的地</span>
-                            </a>
-                        </li>
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-calendar"></i>
-                                <span>日程</span>
-                            </a>
-                        </li>
-                        <li class="testcontent">
-                            <label for="checkbox" id="direct">直行のみ</label>
-                            <input type="checkbox" name="sample-checkbox" id="checkbox" />
-                            <label for="checkbox"></label>
-                        </li>
-                        <li>
-                            <button class="selector-button">
-                                <div class="addon">
-                                    <i class="ena-room"></i>
-                                    <span>部屋</span>
-                                </div>
-                                <p class="persons">×</p>
-                                <span></span>
-                                <div class="addon">
-                                    <i class="ena-adult"></i>
-                                    <span>大人</span>
-                                </div>
-                                <p class="persons">×</p>
-                                <span></span>
-                                <div class="addon">
-                                    <i class="ena-child"></i>
-                                    <span>子供</span>
-                                </div>
-                                <p class="persons">×</p>
-                                <span></span>
-                            </button>
-                        </li>
-                        <li class="search-option-test">
-                            <a href="#">
-                                <span>詳細オプション</span>
-                                <span class="plus">＋</span>
-                            </a>
-
-                        </li>
-                        <li class="button-search">
-                            <a href="#">
-                                <span>検索する</span>
-                            </a>
-                        </li>
-                        <li class="button-search is-strong">
-                            <a href="#">
-                                <p class="ena-dp" id="triangle"></p>
-                                <p class="circle">得</p>
-                                <span>セット割で検索する</span>
-                            </a>
-                        </li>
-                        <li>
-                            <span class="triangle"></span>
-                    </ul> -->
                     <script type="text/javascript">
                         var spBackFlg = false;
                     </script>
@@ -211,8 +150,9 @@
                 <script src="/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
                 <script src="/assets/js/jquery.easing.1.3.js"></script>
                 <script src="/assets/js/jquery.ui.touch-punch.js"></script>
-                <script src="/assets/js/sample.js"></script>
+                <script src="/assets/js/options.js"></script>
                 <script src="/assets/js/main.js"></script>
+                <script src="/assets/js/calendar.js"></script>
                 <footer class="l-footer footer" id="footer">
                     <a href="#" class="footer__link-pc">PCサイトを見る</a>
                     <p class="footer__copyright">@AIRPLUS co.,ltd.</p>

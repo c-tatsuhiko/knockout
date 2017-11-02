@@ -34,9 +34,9 @@
 <body class="page-search is-hide-pagetop" id="body">
     <div id="app">
         <div class="alert-box" id="js-alert-box"></div>
-        <!--ヘッダーファイルを分割しました。-->
+        <!--ヘッダーファイルを分割しました。
+        sample.jsに処理記述済み。-->
         <div id="header"></div>
-        <!--ここからbody-->
         <main class="l-main" id="main">
             <section class="l-section">
                 <div class="search-error" style="display: none;">
@@ -53,67 +53,70 @@
                         <a href="/multi-city" class="search-tabs__item tab-item">周遊</a>
                         <a href="/abroad/" class="search-tabs__item tab-item">海外発着</a>
                     </div>
-                    <!--ul liで作りました。-->
-                    <ul class="testcontent">
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-takeoff"></i>
-                                <span>出発地</span>
-                            </a>
+                    <ul class="search-box">
+                        <li class="wrapper">
+                            <button class="search-button button-size-50" style="margin-right:10px;">
+                                <span class="addon">
+                                    <i class="ena-takeoff icon-sizer"></i>
+                                    <span>出発地</span>
+                                </span>
+                            </button>
+                            <button class="search-button button-size-50">
+                                <span class="addon">
+                                    <i class="ena-landing icon-sizer"></i>
+                                    <span>出発地</span>
+                                </span>
+                            </button>
                         </li>
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-landing"></i>
-                                <span>目的地</span>
-                            </a>
+                        <li class="wrapper">
+                            <button class="search-button button-size-70">
+                                <span class="addon">
+                                    <i class="ena-calendar icon-sizer"></i>
+                                    <span>日程</span>
+                                </span>
+                            </button>
+                            <span class="checkbox-size">
+                                <label for="checkbox" class="checkbox-name">直行のみ</label>
+                                <input type="checkbox" name="sample-checkbox" id="checkbox" />
+                                <label for="checkbox"></label>
+                            </span>
                         </li>
-                        <li class="testcontent">
-                            <a href="#">
-                                <i class="ena-calendar"></i>
-                                <span>日程</span>
-                            </a>
-                        </li>
-                        <li class="testcontent">
-                            <label for="checkbox" id="direct">直行のみ</label>
-                            <input type="checkbox" name="sample-checkbox" id="checkbox" />
-                            <label for="checkbox"></label>
-                        </li>
-                        <li>
-                            <button class="selector-button">
+                        <li class="wrapper">
+                            <button class="search-button">
                                 <div class="addon">
-                                    <i class="ena-room"></i>
+                                    <i class="ena-room icon-sizer"></i>
                                     <span>部屋</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                                 <div class="addon">
-                                    <i class="ena-adult"></i>
+                                    <i class="ena-adult icon-sizer"></i>
                                     <span>大人</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                                 <div class="addon">
-                                    <i class="ena-child"></i>
+                                    <i class="ena-child icon-sizer"></i>
                                     <span>子供</span>
                                 </div>
                                 <p class="persons">×</p>
-                                <span></span>
+                                <span class="px-20">1</span>
                             </button>
                         </li>
-                        <li class="search-option-test">
-                            <a href="#">
-                                <span>詳細オプション</span>
-                                <span class="plus">＋</span>
-                            </a>
-
+                        <li class="centerling">
+                            <button class="search-option-test">
+                                <span>
+                                    <span>詳細オプション</span>
+                                    <span class="plus">＋</span>
+                                </span>
+                            </button>
                         </li>
-                        <li class="button-search">
-                            <a href="#">
-                                <span>検索する</span>
-                            </a>
-                        </li>
-                        <li>
-                            <span class="triangle"></span>
+                        <li class="wrapper">
+                            <button class="btn-primary btn-md">
+                                <span>
+                                    <span>検索する</span>
+                                </span>
+                            </button>
                         </li>
                     </ul>
                     <script type="text/javascript">

@@ -37,14 +37,14 @@ main .wrapper {
 }
 
 main .checkbox-size {
-  width: 30%;
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
 }
 
-main #checkbox-name {
+main .checkbox-name {
   margin-top: -30px;
 }
 
@@ -55,13 +55,22 @@ main .search-option-test {
   font-weight: 600;
 }
 
-main .centerling {
+main .flight-add {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.2rem;
+  font-weight: 600;
+  float: right;
+}
+
+main .centering {
   width: 100%;
   text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
 main .plus {
@@ -75,6 +84,26 @@ main .plus {
   font-size: 1.4rem;
   font-weight: 600;
   padding-top: 3.5px;
+}
+
+.plus:before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.plus:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background-color: #fff;
 }
 
 
@@ -158,6 +187,7 @@ main .addon {
   border-color: rgb(39, 102, 168);
   border-image: initial;
   border-radius: 3pt;
+  padding-left: 0px !important;
 }
 
 .btn-color {
@@ -165,6 +195,55 @@ main .addon {
   border-color: #e14e00;
   background-color: #ff6c00;
   background-image: linear-gradient(to bottom, #ff6c00, #f25f00);
+}
+
+.btn-white {
+  background-color: #fff !important;
+}
+
+.btn-float {
+  letter-spacing: normal;
+  float: left;
+  position: relative;
+}
+
+main .flight {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  width: auto;
+  height: 26px;
+  border: solid 1px #355577;
+  line-height: 18px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 13px;
+  white-space: nowrap;
+}
+
+main .form-flight__wrapper {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #ccc;
+}
+
+main .departure {
+  width: 100%;
+  display: block;
+  flex-wrap: wrap;
+}
+
+main .border-bottom {
+  border-bottom: solid 1px #ccc;
+  margin-bottom: 20px;
+}
+
+main .px-10 {
+  margin-right: 10px;
+}
+
+main .px-20 {
+  margin-right: 20px;
 }
 
 
@@ -181,19 +260,20 @@ main .addon {
   font-size: 2rem;
 }
 
-#icon-sizer,
-#icon-sizer2 {
-  font-size: 1.4em;
+.icon-sizer,
+.icon-sizer2 {
+  font-size: 1.6em;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3px;
 }
 
-#icon-sizer2 {
-  font-size: 3.0rem !important;
+.icon-sizer2 {
+  font-size: 2.5rem !important;
 }
 
-#icon-sizer_selector {
+.icon-sizer_selector {
   color: white;
 }
 
@@ -205,6 +285,8 @@ main .addon {
   width: 28px;
   height: 28px;
   line-height: 28px;
+  padding-left: 2px;
+  padding-top: 1px;
   display: inline-block;
   border-radius: 50%;
 }
@@ -216,16 +298,16 @@ main .addon {
   color: #ff6c00;
   font-size: 3rem;
   width: 7rem;
-  height: 5rem;
+  height: 4.5rem;
   border-radius: 0.1em;
   background-color: white;
   position: relative;
 }
 
 #triangle::after {
-  border-left: 6px solid white;
-  border-top: 16px solid transparent;
-  border-bottom: 28px solid transparent;
+  border-left: 8px solid white;
+  border-top: 23px solid transparent;
+  border-bottom: 23px solid transparent;
   content: "";
   position: absolute;
   left: 50%;

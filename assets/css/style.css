@@ -953,9 +953,7 @@ body {
     background: #eee;
     color: #355577;
     line-height: 1.5;
-    font-size: 14px;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -4622,7 +4620,7 @@ p {
     position: relative;
     width: 56px;
     height: 56px;
-    margin-top:20px;
+    margin-top: 10px;
 }
 
 .header-nav-item.is-alert:before {
@@ -4716,7 +4714,7 @@ p {
 
 .menu-category-tab.is-current {
     background: #355577;
-    color:white;
+    color: white;
 }
 
 .menu-category-tab__icon {
