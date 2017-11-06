@@ -76,14 +76,12 @@ main .centering {
 main .plus {
   display: inline-block;
   position: relative;
-  width: 22px;
-  height: 22px;
-  background-color: #ff6c00;
+  top: 5px;
+  margin-left: .5em;
+  width: 20px;
+  height: 20px;
+  background: #ff6c00;
   border-radius: 50%;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding-top: 3.5px;
 }
 
 .plus:before {
@@ -106,18 +104,8 @@ main .plus {
   background-color: #fff;
 }
 
-
-/*要素のサイズを半分にする時*/
-
-main .button-size-50 {
-  width: calc(50%-5px);
-}
-
-
-/*要素のサイズを7割りにしたいとき*/
-
-main .button-size-70 {
-  width: calc(65%-10px);
+.btn-inline-sizer {
+  max-width: 50px;
 }
 
 main .search-button {
@@ -162,13 +150,19 @@ main .addon {
 }
 
 .btn-md {
-  font-size: 14.4pt;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 36pt;
   cursor: pointer;
   -webkit-appearance: none;
   text-decoration: none;
   outline: none;
+}
+
+@media(max-width:360px) {
+  .btn-md {
+    font-size: 1.3rem;
+  }
 }
 
 .btn-primary {
@@ -201,10 +195,21 @@ main .addon {
   background-color: #fff !important;
 }
 
-.btn-float {
-  letter-spacing: normal;
-  float: left;
-  position: relative;
+
+/*左寄せ*/
+
+.btn-left {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+
+/*中央寄せ*/
+
+.btn-center {
+  position: absolute;
+  margin: auto;
 }
 
 main .flight {
@@ -321,7 +326,6 @@ main .px-20 {
 
 .triangle span {
   position: relative;
-  z-index: 3;
   font-size: 1.6em;
   font-weight: bold;
   line-height: 1.4;
