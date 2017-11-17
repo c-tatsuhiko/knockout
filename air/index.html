@@ -63,12 +63,14 @@
                                             <i class="ena-takeoff icon-sizer"></i>
                                             <span>出発地</span>
                                         </span>
+                                        <span class="airplane-date">TYO</span>
                                     </button>
                                     <button class="search-button">
                                         <span class="addon">
                                             <i class="ena-landing icon-sizer"></i>
                                             <span>目的地</span>
                                         </span>
+                                        <span class="airplane-date">PUS</span>
                                     </button>
                                 </li>
                                 <li class="wrapper">
@@ -77,6 +79,7 @@
                                             <i class="ena-calendar icon-sizer"></i>
                                             <span>日程</span>
                                         </span>
+                                        <span class="calendar-date">2017/11/07～2017/11/11</span>
                                     </button>
                                     <span class="checkbox-size">
                                         <label for="checkbox-1" class="checkbox-name">直行のみ</label>
@@ -85,81 +88,86 @@
                                     </span>
                                 </li>
                             </ul>
+
                             <ul>
                                 <li class="wrapper">
                                     <button class="search-button">
-                                        <div class="addon">
-                                            <i class="ena-adult icon-sizer"></i>
-                                            <span>大人</span>
+                                        <div class="member-count">
+                                            <div class="addon">
+                                                <i class="ena-adult icon-sizer"></i>
+                                                <span>大人</span>
+                                            </div>
+                                            <p class="persons">×</p>
+                                            <span class="px-20">1</span>
+                                            <div class="addon">
+                                                <i class="ena-child icon-sizer"></i>
+                                                <span>子供</span>
+                                            </div>
+                                            <p class="persons">×</p>
+                                            <span class="px-20">1</span>
+                                            <div class="addon">
+                                                <i class="ena-baby icon-sizer"></i>
+                                                <span>幼児</span>
+                                            </div>
+                                            <p class="persons">×</p>
+                                            <span class="px-20">1</span>
                                         </div>
-                                        <p class="persons">×</p>
-                                        <span class="px-20">1</span>
-                                        <div class="addon">
-                                            <i class="ena-child icon-sizer"></i>
-                                            <span>子供</span>
-                                        </div>
-                                        <p class="persons">×</p>
-                                        <span class="px-20">1</span>
-                                        <div class="addon">
-                                            <i class="ena-baby icon-sizer"></i>
-                                            <span>幼児</span>
-                                        </div>
-                                        <p class="persons">×</p>
-                                        <span class="px-20">1</span>
                                     </button>
                                 </li>
                                 <li class="centering">
-                                    <button class="search-option-test" data-bind="click:myHandler">
-                                        <span>
+                                    <button class="search-option-button" data-bind="click:myHandler">
+                                        <span style="width:20%;">
                                             <span>詳細オプション</span>
-                                            <span class="plus"></span>
+                                            <!-- <span class="plus"></span> -->
+                                            <span id="DetailOption" class="plus-test">＋</span>
                                         </span>
                                     </button>
                                 </li>
-                                <ul data-bind="visible:showElement" style="display:none;" id="test">
-                                    <li class="wrapper">
-                                        <button class="search-button btn-white">
-                                            <span class="btn-left">
-                                                <i class="ena-aircraft icon-sizer"></i>
-                                                <p>航空会社</p>
-                                            </span>
-                                            <span class="btn-center">
-                                                指定なし
-                                            </span>
-                                        </button>
-                                    </li>
-                        </li>
-                        <li class="wrapper" id="option">
-                            <button class="search-button btn-white">
-                                <span class="btn-left">
-                                    <i class="ena-seat icon-sizer"></i>
-                                    <p>座席クラス</p>
-                                </span>
-                                <span class="btn-center">
-                                    指定なし
-                                </span>
-                            </button>
-                        </li>
-                        </ul>
-                        <li class="wrapper">
-                            <button class="btn-primary btn-md">
-                                <span>
-                                    <span>検索する</span>
-                                </span>
-                            </button>
-                        </li>
-                        <li class="wrapper">
-                            <button class="btn-primary btn-md btn-color">
-                                <span class="btn-inline-sizer">
-                                    <p class="ena-dp" id="triangle"></p>
-                                </span>
-                                <span>
-                                    <p class="circle">得</p>
-                                    <span>セット割で検索する</span>
-                                </span>
-                            </button>
-                        </li>
-                        </ul>
+                            </ul>
+                            <ul id="accordion" style="display:none;">
+                                <li class="wrapper">
+                                    <button class="search-button btn-white">
+                                        <span class="btn-left">
+                                            <i class="ena-aircraft icon-sizer"></i>
+                                            <p>航空会社</p>
+                                        </span>
+                                        <span class="btn-center">
+                                            指定なし
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="wrapper" id="option">
+                                    <button class="search-button btn-white">
+                                        <span class="btn-left">
+                                            <i class="ena-seat icon-sizer"></i>
+                                            <p>座席クラス</p>
+                                        </span>
+                                        <span class="btn-center">
+                                            指定なし
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="wrapper">
+                                    <button class="btn-primary btn-md">
+                                        <span>
+                                            <span>検索する</span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="wrapper mt-18">
+                                    <button class="btn-primary btn-md btn-color">
+                                        <span class="btn-inline-sizer">
+                                            <p class="ena-dp" id="triangle"></p>
+                                        </span>
+                                        <span>
+                                            <p class="circle">得</p>
+                                            <span>セット割で検索する</span>
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <script type="text/javascript">
